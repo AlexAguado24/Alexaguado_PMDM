@@ -32,7 +32,8 @@ fun main(arg: Array<String>){
     //ejercicioAleatorio()
     //estructuraFor()
     //estructuraWhen()
-    funcionArray()
+    //funcionArray()
+    //funcionListas()
 }
 
 /*fun estructuraIf() {
@@ -175,4 +176,21 @@ fun funcionArray() {
         }
     }
 
+}
+
+fun funcionListas(){
+    var listaAlumnos = ArrayList<String>()
+
+    listaAlumnos.add("Marcos_")
+    listaAlumnos.add("Ivan")
+    listaAlumnos.add("Jessy_")
+    listaAlumnos.add("Jorge")
+    listaAlumnos.add("Sergio_")
+
+    //listaAlumnos.set(0,"alumno nuevo")
+    //listaAlumnos.removeIf ({ elemento-> elemento.contains("_") })
+    //println(listaAlumnos.get(0))
+    //listaAlumnos.set(0,"Alumno nuevo")
+    //listaAlumnos.forEach ({ println(it) })
+    listaAlumnos.find { it.contains("_1") }
 }
