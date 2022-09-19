@@ -1,16 +1,19 @@
 class Coche {
 
     var marca: String
-        /*get() {
-
-        }
-        set(value) {
-
-        }*/
     var modelo: String
+        get() = field
+        set(value) {
+            field = value
+        }
     var cv: Int
+        get() = field
+        set(cv) {
+            field = cv
+        }
     var bastidor: String? = null
     var velocidad: Int? = null
+
 
     constructor(marca: String, modelo:String, cv:Int){
         this.marca = marca
@@ -43,5 +46,11 @@ class Coche {
     }
     //getter setter
 
+    fun getVelocidad(): Int{
+        return this.velocidad?: 0
+    }
+    fun setVelocidad(velocidad: Int){
+        this.velocidad = velocidad
+    }
     //ToString
 }
