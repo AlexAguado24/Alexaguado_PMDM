@@ -1,28 +1,21 @@
-class Coche {
+class Coche (var marca: String, var modelo: String){
 
-    var marca: String
-    var modelo: String
-        get() = field
-        set(value) {
-            field = value
-        }
-    var cv: Int
+
+    var cv: Int? = 0
         get() = field
         set(cv) {
             field = cv
         }
     var bastidor: String? = null
     var velocidad: Int? = null
+    lateinit var propietario: Propietario
 
 
-    constructor(marca: String, modelo:String, cv:Int){
-        this.marca = marca
-        this.modelo = modelo
+
+    constructor(marca: String, modelo:String, cv:Int): this(marca, modelo){
         this.cv = cv
     }
-    constructor(marca: String, modelo:String, cv:Int, bastidor: String){
-        this.marca = marca
-        this.modelo = modelo
+    constructor(marca: String, modelo:String, cv:Int, bastidor: String): this(marca, modelo){
         this.cv = cv
         this.bastidor = bastidor
     }
@@ -30,6 +23,10 @@ class Coche {
     //metodos
     fun acelerar(velocidad: Int){
         this.velocidad = this.velocidad?.plus(velocidad)
+    }
+
+    fun asignarPropietario(propietario: Propietario){
+        this.propietario = propietario
     }
 
     //
