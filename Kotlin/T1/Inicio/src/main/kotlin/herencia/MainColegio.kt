@@ -17,5 +17,6 @@ fun main()  {
     listado.add(profesor2)
 
     println("Mostrando datos")
-    listado.forEach ({it.mostrarDatos()})  }
+    listado.forEach ({it.mostrarDatos()})
+
 }
