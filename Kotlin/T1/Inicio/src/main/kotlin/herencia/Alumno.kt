@@ -1,5 +1,7 @@
 package herencia
 
+import java.sql.DriverManager.println
+
 class Alumno(nombre: String, apellido: String, dni: String, edad: Int) : Persona(nombre, apellido, dni, edad) {
 
 

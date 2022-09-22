@@ -1,5 +1,8 @@
 package herencia
 
+import java.sql.DriverManager.println
+import java.util.*
+
 fun main()  {
 
     var alumno1: Alumno = Alumno("a","a","a",20,"1234")

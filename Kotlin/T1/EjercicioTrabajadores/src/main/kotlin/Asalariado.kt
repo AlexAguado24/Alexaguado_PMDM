@@ -1,6 +1,9 @@
 class Asalariado(nombre: String, apellido: String, dni: String) : Trabajador(nombre, apellido, dni) {
 
     var sueldo: Int = 0
+    set(sueldo) {
+        field = sueldo
+    }
     var numPagas: Int = 0
     var contratado: Boolean = false
 
@@ -19,5 +22,12 @@ class Asalariado(nombre: String, apellido: String, dni: String) : Trabajador(nom
         println("Sueldo $sueldo")
         println("Numero de Pagas $numPagas")
         println("Contratado $contratado")
+    }
+
+    fun getnumPagas(): Int{
+        return this.numPagas?: 0
+    }
+    fun setnumPagas(numPagas: Int){
+        this.numPagas = numPagas
     }
 }
