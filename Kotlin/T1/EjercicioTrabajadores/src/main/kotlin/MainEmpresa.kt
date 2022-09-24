@@ -57,7 +57,7 @@ fun main() {
                 empresa?.añadirTrabajador(autonomo)
             }
         }
-        
+
     }
 
 }
