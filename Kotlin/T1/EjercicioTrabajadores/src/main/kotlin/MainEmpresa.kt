@@ -60,8 +60,15 @@ fun main() {
         2->{
             println("Listando Trabajadores")
             println("¿Que Trabajadores quieres listar?")
-            println("¿Que Trabajadores quieres listar?")
-            println("¿Que Trabajadores quieres listar?")
+            println("1. Asalariados")
+            println("2. Autonomos")
+            println("3. Todos")
+            var listar = readln().toInt()
+            if (listar == 1){
+                for () {
+
+                }
+            }
         }
     }
 
