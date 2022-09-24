@@ -57,7 +57,12 @@ fun main() {
                 empresa?.añadirTrabajador(autonomo)
             }
         }
-
+        2->{
+            println("Listando Trabajadores")
+            println("¿Que Trabajadores quieres listar?")
+            println("¿Que Trabajadores quieres listar?")
+            println("¿Que Trabajadores quieres listar?")
+        }
     }
 
 }
