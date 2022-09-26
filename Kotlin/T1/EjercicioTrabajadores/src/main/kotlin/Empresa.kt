@@ -11,6 +11,4 @@ class Empresa {
         listaTrabajadores!!.add(trabajador)
     }
 
-
-
 }

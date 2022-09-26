@@ -1,27 +1,35 @@
 class Asalariado(nombre: String, apellido: String, dni: String) : Trabajador(nombre, apellido, dni) {
 
     var sueldo: Int = 0
-    set(sueldo) {
-        field = sueldo
-    }
+        get() = sueldo
+        set(sueldo) {
+            field = sueldo
+        }
     var numPagas: Int = 0
+        get() = numPagas
+        set(numPagas) {
+            field = numPagas
+        }
     var contratado: Boolean = false
+        get() = contratado
+        set(contratado) {
+            field = contratado
+        }
 
-    constructor(nombre: String, apellido: String, dni: String, sueldo: Int, numPagas: Int, contratado: Boolean) : this(
+    constructor(nombre: String, apellido: String, dni: String, sueldo: Int, numPagas: Int) : this(
         nombre,
         apellido,
         dni
     ) {
         this.sueldo = sueldo
         this.numPagas = numPagas
-        this.contratado = contratado
+        this.contratado = true
     }
 
     override fun mostrarDator() {
         super.mostrarDator()
-        println("Sueldo $sueldo")
-        println("Numero de Pagas $numPagas")
-        println("Contratado $contratado")
+        println("Sueldo : $sueldo")
+        println("Numero de Pagas : $numPagas")
     }
 
     fun getnumPagas(): Int{
