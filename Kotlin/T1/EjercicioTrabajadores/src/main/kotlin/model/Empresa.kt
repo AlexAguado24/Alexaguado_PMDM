@@ -8,18 +8,21 @@ class Empresa {
     init {
         listaTrabajadores = ArrayList()
     }
-    fun añadirTrabajador(trabajador: Trabajador){
+
+    fun añadirTrabajador(trabajador: Trabajador) {
         var existe: Boolean = false
-        listaTrabajadores!!.forEachIndexed { index, trabajador ->
+        listaTrabajadores?.forEach {  }
+        /*listaTrabajadores!!.forEachIndexed { index, trabajador ->
             //todo preguntar como comparar atributos entre objetos para saber si coinciden
             if (trabajador.equals(trabajador)){
                 println("El trabajador ya existe")
                 existe = true
-            } else if (trabajador is Jefe){
+            }
+            if (trabajador is Jefe){
                 println("No puede haber mas de un jefe en la empresa")
                 existe = true
             }
-        }
+        }*/
         if (!existe){
             listaTrabajadores!!.add(trabajador)
         }
