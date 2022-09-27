@@ -1,6 +1,6 @@
 fun main() {
 
-    var empresa: Empresa? = null
+    var empresa: Empresa? = Empresa()
 
 
     do {
@@ -81,7 +81,7 @@ fun main() {
                     }
                 }
                 if (listar == 3){
-                    empresa!!.listaTrabajadores?.forEach { it.mostrarDator() }
+                    empresa!!.listarTrabajadores("Asalariados")
                 }
             }
         }

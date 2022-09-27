@@ -1,15 +1,9 @@
 class Asalariado(nombre: String, apellido: String, dni: String) : Trabajador(nombre, apellido, dni) {
 
     var sueldo: Int = 0
-        get() = sueldo
-        set(sueldo) {
-            field = sueldo
-        }
+
     var numPagas: Int = 0
-        get() = numPagas
-        set(numPagas) {
-            field = numPagas
-        }
+
     var contratado: Boolean = false
         get() = contratado
         set(contratado) {
