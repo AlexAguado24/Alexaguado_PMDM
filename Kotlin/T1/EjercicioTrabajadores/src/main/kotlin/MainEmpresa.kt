@@ -1,3 +1,8 @@
+import model.Asalariado
+import model.Autonomo
+import model.Empresa
+import model.Jefe
+
 fun main() {
 
     var empresa: Empresa? = Empresa()
@@ -12,11 +17,11 @@ fun main() {
 
         when(opcion){
             1->{
-                println("Registrando Trabajador")
+                println("Registrando model.Trabajador")
                 println("¿Que puesto tiene el trabajador?")
                 println("1. Jefe")
                 println("2. Asalariado")
-                println("3 Autonomo")
+                println("3. Autonomo")
 
                 var puesto = readln().toInt()
 
@@ -28,10 +33,7 @@ fun main() {
                     println("Indica su dni")
                     var dni  = readln()
                     println("Indica su acciones")
-                    var acciones  = readln().toInt()
-                    println("Indica su befeficios")
-                    var beneficios  = readln().toInt()
-                    var jefe: Jefe = Jefe(nombre,apellido, dni, acciones, beneficios)
+                    var jefe: Jefe = Jefe(nombre,apellido, dni)
                     empresa?.añadirTrabajador(jefe)
                 } else if (puesto == 2) {
                     println("Indica su nombre")
@@ -67,21 +69,13 @@ fun main() {
                 println("3. Todos")
                 var listar = readln().toInt()
                 if (listar == 1){
-                    empresa!!.listaTrabajadores?.forEach { index ->
-                        if (index is Asalariado){
-                            index.mostrarDator()
-                        }
-                    }
+                    empresa!!.listarTrabajadores("Asalariado")
                 }
                 if (listar == 2){
-                    empresa!!.listaTrabajadores?.forEach { index ->
-                        if (index is Autonomo){
-                            index.mostrarDator()
-                        }
-                    }
+                    empresa!!.listarTrabajadores("Autonomo")
                 }
                 if (listar == 3){
-                    empresa!!.listarTrabajadores("Asalariados")
+                    empresa!!.listarTrabajadores("Trabajador")
                 }
             }
         }

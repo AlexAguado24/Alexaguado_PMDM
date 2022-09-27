@@ -1,4 +1,6 @@
-open class Trabajador (var nombre: String, var apellido: String, val dni: String){
+package model
+
+open abstract class Trabajador (protected var nombre: String, protected var apellido: String, protected val dni: String){
 
 
     open fun mostrarDator(){
