@@ -9,7 +9,20 @@ class Empresa {
         listaTrabajadores = ArrayList()
     }
     fun añadirTrabajador(trabajador: Trabajador){
-        listaTrabajadores!!.add(trabajador)
+        var existe: Boolean = false
+        listaTrabajadores!!.forEachIndexed { index, trabajador ->
+            //todo preguntar como comparar atributos entre objetos para saber si coinciden
+            if (trabajador.equals(trabajador)){
+                println("El trabajador ya existe")
+                existe = true
+            } else if (trabajador is Jefe){
+                println("No puede haber mas de un jefe en la empresa")
+                existe = true
+            }
+        }
+        if (!existe){
+            listaTrabajadores!!.add(trabajador)
+        }
     }
 
     fun listarTrabajadores(tipo: String){
@@ -32,6 +45,10 @@ class Empresa {
                 }
             }
         }
+    }
+
+    fun listarDatosDelTrabajador(dni:String){
+        //todo preguntar como comparar el dni de cada trabajador para luego listarlo
     }
 
 }

@@ -10,14 +10,14 @@ fun main() {
 
     do {
         println("1. Registrar trabajador")
-        println("2. Listar trabajador")
+        println("2. Listar trabajadores")
         println("3. Mostrar datos trabajador")
         println("Introduce la opcion deseada")
         var opcion = readln().toInt()
 
         when(opcion){
             1->{
-                println("Registrando model.Trabajador")
+                println("Registrando Trabajador")
                 println("¿Que puesto tiene el trabajador?")
                 println("1. Jefe")
                 println("2. Asalariado")
@@ -32,7 +32,6 @@ fun main() {
                     var apellido  = readln()
                     println("Indica su dni")
                     var dni  = readln()
-                    println("Indica su acciones")
                     var jefe: Jefe = Jefe(nombre,apellido, dni)
                     empresa?.añadirTrabajador(jefe)
                 } else if (puesto == 2) {
@@ -77,6 +76,11 @@ fun main() {
                 if (listar == 3){
                     empresa!!.listarTrabajadores("Trabajador")
                 }
+            }
+            3 ->{
+                println("Indica el dni del trabajador")
+                var dni =  readln()
+
             }
         }
     } while (opcion != 0)
