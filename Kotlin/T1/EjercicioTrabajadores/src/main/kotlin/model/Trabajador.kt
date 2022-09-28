@@ -9,4 +9,8 @@ open abstract class Trabajador (protected var nombre: String, protected var apel
         println("DNI : $dni")
     }
 
+    fun getDNI(): String{
+        return dni
+    }
+
 }
