@@ -10,21 +10,29 @@ class Empresa {
     }
 
     fun añadirTrabajador(trabajador: Trabajador) {
+            var existe: Boolean = false
+            listaTrabajadores!!.forEach { item ->
+                if (item.getDNI().equals(trabajador.getDNI())) {
+                    println("El trabajador que has introducido ya existe")
+                    existe = true
+                }
+            }
+            if (!existe) {
+                listaTrabajadores!!.add(trabajador)
+            }
+    }
+
+    fun existeJefe(): Boolean {
         var existe: Boolean = false
-        var existeJefe : Boolean = false
-        listaTrabajadores!!.forEachIndexed { index, item ->
-            if (trabajador.getDNI().equals(item.getDNI())){
-                println("El trabajador ya existe")
+        listaTrabajadores!!.forEach { item ->
+            if (item is Jefe) {
                 existe = true
             }
-            if ( item is Jefe ){
-                println("No puede haber mas de un jefe en la empresa")
-                existeJefe = true
-            }
         }
-        if (!existe){
-            listaTrabajadores!!.add(trabajador)
+        if (!existe) {
+            existe = false
         }
+        return existe
     }
 
     fun listarTrabajadores(tipo: String){
@@ -33,10 +41,12 @@ class Empresa {
             when(tipo){
                 "Asalariado" ->{
                     if (persona is Asalariado){
+                        println("Asalariado: ")
                         persona.mostrarDator()
                     }
                 }
                 "Autonomo" -> {
+                    println("Autonomo: ")
                     if (persona::class.simpleName?.toLowerCase() == tipo.toLowerCase()){
                         /*(persona as Asalariado) <- Forma de castear en kotlin */
                         persona.mostrarDator()
@@ -44,13 +54,49 @@ class Empresa {
                 }
                 else ->{
                     persona.mostrarDator();
+                    println()
                 }
             }
         }
     }
 
     fun listarDatosDelTrabajador(dni:String){
-        //todo preguntar como comparar el dni de cada trabajador para luego listarlo
+        var existe: Boolean = false
+        listaTrabajadores!!.forEach {
+                trabajador ->
+                if (trabajador.getDNI() == dni){
+                    trabajador.mostrarDator()
+                    existe = true
+                }
+        }
+        if (!existe) {
+            println("El trabajador indicado no existe")
+        }
+    }
+
+    fun despedirTrabajador(dniJefe: String, dniTrabajador: String) {
+        var existe: Boolean = false
+        var existeJefe : Boolean = false
+        listaTrabajadores!!.forEach { item ->
+            if (item.getDNI() == dniJefe) {
+                existeJefe = true
+                listaTrabajadores!!.forEachIndexed{
+                    index, trabajador ->
+                    if (trabajador.getDNI() == (dniTrabajador)){
+                        listaTrabajadores!!.remove(trabajador)
+                    }
+                }
+                /*listaTrabajadores!!.forEach { trabajador ->
+                    if (trabajador.getDNI().equals(dniTrabajador)) {
+                        listaTrabajadores!!.remove(trabajador)
+                        existe = true
+                    }
+                }*/
+            }
+        }
+        if (!existe || !existeJefe) {
+            println("El trabajador o jefe que buscas no estan en la empresa")
+        }
     }
 
 }

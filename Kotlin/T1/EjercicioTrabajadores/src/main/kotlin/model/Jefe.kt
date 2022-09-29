@@ -19,4 +19,8 @@ class Jefe(nombre: String, apellido: String, dni: String) : Trabajador(nombre, a
             println("Beneficios $beneficios")
         }
     }
+
+    fun despedir(dniTrabajador: String) {
+
+    }
 }

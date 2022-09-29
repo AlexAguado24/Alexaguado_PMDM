@@ -9,11 +9,14 @@ fun main() {
 
 
     do {
+        println()
         println("1. Registrar trabajador")
         println("2. Listar trabajadores")
         println("3. Mostrar datos trabajador")
+        println("4. Despedir")
         println("Introduce la opcion deseada")
         var opcion = readln().toInt()
+        var dniTrabajador: String
 
         when(opcion){
             1->{
@@ -26,14 +29,18 @@ fun main() {
                 var puesto = readln().toInt()
 
                 if (puesto == 1) {
-                    println("Indica su nombre")
-                    var nombre  = readln()
-                    println("Indica su apellido")
-                    var apellido  = readln()
-                    println("Indica su dni")
-                    var dni  = readln()
-                    var jefe: Jefe = Jefe(nombre,apellido, dni)
-                    empresa?.añadirTrabajador(jefe)
+                    if (empresa!!.existeJefe()){
+                        println("Ya hay un jefe en la empresa")
+                    } else {
+                        println("Indica su nombre")
+                        var nombre = readln()
+                        println("Indica su apellido")
+                        var apellido = readln()
+                        println("Indica su dni")
+                        var dni = readln()
+                        var jefe: Jefe = Jefe(nombre, apellido, dni)
+                        empresa?.añadirTrabajador(jefe)
+                    }
                 } else if (puesto == 2) {
                     println("Indica su nombre")
                     var nombre  = readln()
@@ -79,8 +86,16 @@ fun main() {
             }
             3 ->{
                 println("Indica el dni del trabajador")
-                var dni =  readln()
-
+                dniTrabajador = readln()
+                empresa!!.listarDatosDelTrabajador(dniTrabajador)
+            }
+            4 ->{
+                println("Despidiendo trabajador")
+                println("Indica el dni del jefe")
+                var datoJefe = readln()
+                println("Indica el dni del trabajador a despedir")
+                dniTrabajador = readln()
+                empresa!!.despedirTrabajador(datoJefe,dniTrabajador)
             }
         }
     } while (opcion != 0)

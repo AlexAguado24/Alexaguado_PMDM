@@ -12,5 +12,4 @@ open abstract class Trabajador (protected var nombre: String, protected var apel
     fun getDNI(): String{
         return dni
     }
-
 }
