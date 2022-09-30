@@ -4,7 +4,6 @@ import java.util.ArrayList
 class Empresa {
 
     var listaTrabajadores: ArrayList<Trabajador>?;
-
     init {
         listaTrabajadores = ArrayList()
     }
@@ -74,7 +73,7 @@ class Empresa {
         }
     }
 
-    fun despedirTrabajador(dniJefe: String, dniTrabajador: String) {
+    /*fun despedirTrabajador(dniJefe: String, dniTrabajador: String) {
         var existe: Boolean = false
         var existeJefe : Boolean = false
         listaTrabajadores!!.forEach { item ->
@@ -82,22 +81,36 @@ class Empresa {
                 existeJefe = true
                 listaTrabajadores!!.forEachIndexed{
                     index, trabajador ->
-                    if (trabajador.getDNI() == (dniTrabajador)){
-                        listaTrabajadores!!.remove(trabajador)
-                    }
                 }
-                /*listaTrabajadores!!.forEach { trabajador ->
-                    if (trabajador.getDNI().equals(dniTrabajador)) {
-                        listaTrabajadores!!.remove(trabajador)
-                        existe = true
-                    }
-                }*/
             }
+        }
+        if (trabajador.getDNI() == (dniTrabajador)){
+            listaTrabajadores!!.remove(trabajador)
         }
         if (!existe || !existeJefe) {
             println("El trabajador o jefe que buscas no estan en la empresa")
         }
-    }
 
+    }*/
+    fun despedirTrabajador(dni: String, trabajadorADespedir: Trabajador) {
+
+        listaTrabajadores!!.forEach { persona ->
+            if (dni.equals(persona.getDNI()) && persona is Jefe) {
+                var dni_empleado: String? = null
+                println("Introduzca DNI del trabajador:")
+                dni_empleado = readLine()?.toString()
+                listaTrabajadores!!.forEach { trabajador ->
+                    if (dni_empleado == trabajadorADespedir.getDNI()) {
+                        println("Trabajador despedido")
+                    } else {
+                        println("El trabajador no encontrado")
+                    }
+                }
+            } else {
+                println("Solo un jefe puede despedir")
+            }
+        }
+        listaTrabajadores!!.remove(trabajadorADespedir)
+    }
 }
 
