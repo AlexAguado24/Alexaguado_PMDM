@@ -7,11 +7,11 @@ fun main() {
 
     var centralita: Centralita? = Centralita()
 
-    var provincial: LlamadaProvincial = LlamadaProvincial(1123,123,30)
-    var nacional1: LlamadaNacional = LlamadaNacional(456,456,20,1)
-    var nacional2: LlamadaNacional = LlamadaNacional(456,456,20,2)
-    var nacional3: LlamadaNacional = LlamadaNacional(456,456,20,3)
-    var local: LlamadaLocal = LlamadaLocal(789,789,10)
+    var provincial: LlamadaProvincial = LlamadaProvincial(1123,412,30)
+    var nacional1: LlamadaNacional = LlamadaNacional(456,457,20,1)
+    var nacional2: LlamadaNacional = LlamadaNacional(567,568,20,2)
+    var nacional3: LlamadaNacional = LlamadaNacional(678,789,20,3)
+    var local: LlamadaLocal = LlamadaLocal(821,218,10)
 
     centralita!!.registrarLlamada(local)
     centralita!!.registrarLlamada(nacional1)
@@ -21,5 +21,7 @@ fun main() {
 
 
     centralita!!.mostrarLlamadas("todas")
+
+    centralita!!.calcularCostes()
 
 }
