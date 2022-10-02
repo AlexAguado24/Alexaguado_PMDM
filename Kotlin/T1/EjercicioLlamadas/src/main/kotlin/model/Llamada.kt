@@ -1,13 +1,18 @@
 package model
 
 open abstract class Llamada (protected var nOrigen: Int, protected var nDestino: Int,
-                             protected var duracion: Int, protected var coste: Double){
-    protected abstract fun calcularCoste()
+                             protected var duracion: Int){
+
+    protected var coste: Double = 0.0
+
+
+    abstract fun calcularCoste()
 
     open fun mostrarDatos(){
         println("Numero Origen $nOrigen")
         println("Numero Destino $nDestino")
         println("Duracion $duracion")
+        println("Coste $coste")
     }
 
     fun getDURACION(): Int{

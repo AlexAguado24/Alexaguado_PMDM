@@ -1,6 +1,6 @@
 package model
 
-class LlamadaProvincial (nOrigen: Int, nDestino: Int, duracion: Int) :
+class LlamadaLocal(nOrigen: Int, nDestino: Int, duracion: Int) :
     Llamada(nOrigen, nDestino, duracion) {
 
     init {
@@ -8,6 +8,6 @@ class LlamadaProvincial (nOrigen: Int, nDestino: Int, duracion: Int) :
     }
 
     override fun calcularCoste() {
-        this.coste = this.duracion*0.15
+        this.coste = 0.0
     }
 }

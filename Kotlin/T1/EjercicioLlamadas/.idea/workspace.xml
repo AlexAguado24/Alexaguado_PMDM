@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce3d097f-c376-4f48-a6b6-f24d6f5f3706" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/MainLlamadas.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/Llamada.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/LlamadaProvincial.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/Centralita.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/LlamadaLocal.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/LlamadaNacional.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EjercicioLlamadas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EjercicioLlamadas.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/MainLlamadas.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/MainLlamadas.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/Llamada.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/Llamada.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/LlamadaProvincial.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/LlamadaProvincial.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EjercicioTrabajadores/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioTrabajadores/src/main/kotlin/model/Empresa.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../EjercicioTrabajadores/src/main/kotlin/model/Empresa.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin File" />
+        <option value="Class" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -44,6 +49,20 @@
     "last_opened_file_path": "C:/Users/Usuario/Desktop/DAM/Segundo 2º/Alexaguado_DI/T1/codigos2223/ejerCarta"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="MainLlamadasKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainLlamadasKt" />
+      <module name="EjercicioLlamadas" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainLlamadasKt" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

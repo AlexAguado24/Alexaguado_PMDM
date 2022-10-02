@@ -1,7 +1,7 @@
 package model
 
 import java.util.ArrayList
-class Empresa {
+class Empresa (){
 
     var listaTrabajadores: ArrayList<Trabajador>?;
     var trabajadorADespedir: Trabajador? = null
