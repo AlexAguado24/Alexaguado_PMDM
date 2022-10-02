@@ -4,7 +4,7 @@ import java.util.ArrayList
 class Empresa {
 
     var listaTrabajadores: ArrayList<Trabajador>?;
-
+    var trabajadorADespedir: Trabajador? = null
     init {
         listaTrabajadores = ArrayList()
     }
@@ -73,31 +73,25 @@ class Empresa {
             println("El trabajador indicado no existe")
         }
     }
-
-    fun despedirTrabajador(dniJefe: String, dniTrabajador: String) {
-        var existe: Boolean = false
-        var existeJefe : Boolean = false
-        listaTrabajadores!!.forEach { item ->
-            if (item.getDNI() == dniJefe) {
-                existeJefe = true
-                listaTrabajadores!!.forEachIndexed{
-                    index, trabajador ->
-                    if (trabajador.getDNI() == (dniTrabajador)){
-                        listaTrabajadores!!.remove(trabajador)
+    fun despedirTrabajador(dni: String) {
+        listaTrabajadores!!.forEach { persona ->
+            if (dni.equals(persona.getDNI()) && persona is Jefe) {
+                var dni_empleado: String? = null
+                println("Introduzca DNI del trabajador:")
+                dni_empleado = readLine()?.toString()
+                listaTrabajadores!!.forEach { trabajador ->
+                    if (dni_empleado == trabajador.getDNI()) {
+                        trabajadorADespedir = trabajador
+                        println("Trabajador despedido")
+                    } else {
+                        println("El trabajador no encontrado")
                     }
                 }
-                /*listaTrabajadores!!.forEach { trabajador ->
-                    if (trabajador.getDNI().equals(dniTrabajador)) {
-                        listaTrabajadores!!.remove(trabajador)
-                        existe = true
-                    }
-                }*/
+            } else {
+                println("Solo un jefe puede despedir")
             }
         }
-        if (!existe || !existeJefe) {
-            println("El trabajador o jefe que buscas no estan en la empresa")
-        }
+        listaTrabajadores!!.remove(trabajadorADespedir)
     }
-
 }
 

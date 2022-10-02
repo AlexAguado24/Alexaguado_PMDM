@@ -94,8 +94,7 @@ fun main() {
                 println("Indica el dni del jefe")
                 var datoJefe = readln()
                 println("Indica el dni del trabajador a despedir")
-                dniTrabajador = readln()
-                empresa!!.despedirTrabajador(datoJefe,dniTrabajador)
+                empresa!!.despedirTrabajador(datoJefe)
             }
         }
     } while (opcion != 0)
