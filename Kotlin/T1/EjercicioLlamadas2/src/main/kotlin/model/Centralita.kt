@@ -1,6 +1,7 @@
 package model
 
-class Centralita (){
+class Centralita
+{
 
     var listaLlamadas: ArrayList<Llamada>?
     var costeTotal: Double = 0.0
@@ -18,9 +19,6 @@ class Centralita (){
 
     fun registrarLlamada(llamada: Llamada){
         listaLlamadas!!.add(llamada)
-        println("Llamada agregada")
-        llamada.mostrarDatos()
-        this.costeTotal += llamada.getCOSTE()
     }
 
     fun mostrarLlamadas (tipo: String){
