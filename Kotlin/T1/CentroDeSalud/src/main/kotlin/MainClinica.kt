@@ -5,15 +5,16 @@ fun main() {
     var opcion: Int
     var centroSalud: CentroSalud = CentroSalud()
 
-    println("Bienvenido al centro de salud")
-    println("Indica la opcion que deseas")
-    println("1. Registrar Paciente")
-    println("2. Pedir Cita")
-    println("3. Listar medicos disponibles")
-    println("4. Listar citas de un paciente")
-    opcion = readln().toInt()
+
 
     do {
+        println("Bienvenido al centro de salud")
+        println("Indica la opcion que deseas")
+        println("1. Registrar Paciente")
+        println("2. Pedir Cita")
+        println("3. Listar medicos disponibles")
+        println("4. Listar citas de un paciente")
+        opcion = readln().toInt()
         when (opcion) {
             1 -> {
                 println("Registrando paciente")

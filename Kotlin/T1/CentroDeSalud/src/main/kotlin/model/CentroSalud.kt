@@ -6,6 +6,7 @@ class CentroSalud () {
     lateinit var listaMedicos: ArrayList<Medico>
 
     init {
+        listaMedicos = ArrayList()
         listaMedicos.add(Medico("Nick", "Rivera", "001",1,"traumatología"))
         listaMedicos.add(Medico("Hannibal", "Lecter", "002", 2,"digestivo"))
         listaMedicos.add(Medico("Sam", "Owens", "003",3,"psiquiatría"))
@@ -55,7 +56,7 @@ class CentroSalud () {
     fun listarMedicosPorEspecialidad(especialidad: String){
         var existeMedico: Boolean = false
         listaMedicos.forEach { medico ->
-            if (medico.getEspecialidad().equals(especialidad)) {
+            if (medico.getEspecialidad() == especialidad) {
                 medico.mostrarDatos()
                 existeMedico = true
             }
