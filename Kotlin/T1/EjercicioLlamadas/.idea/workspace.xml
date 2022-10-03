@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="265dcc39-53ad-478b-9140-1cb2a292fcc9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/Centralita.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/Llamada.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/LlamadaLocal.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/LlamadaNacional.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/LlamadaProvincial.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EjercicioLlamadas/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EjercicioLlamadas/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EjercicioLlamadas/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EjercicioLlamadas/EjercicioLlamadas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EjercicioLlamadas.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EjercicioLlamadas/src/main/kotlin/MainLlamadas.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/MainLlamadas.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EjercicioLlamadas/src/main/kotlin/model/Centralita.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EjercicioLlamadas/src/main/kotlin/model/Llamada.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EjercicioLlamadas/src/main/kotlin/model/LlamadaLocal.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EjercicioLlamadas/src/main/kotlin/model/LlamadaNacional.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EjercicioLlamadas/src/main/kotlin/model/LlamadaProvincial.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioLlamadas2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EjercicioLlamadas2/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,13 +28,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Usuario/Desktop/DAM/Segundo 2º/Alexaguado_PMDM/Kotlin/T1/EjercicioLlamadas"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="MainLlamadasKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainLlamadasKt" />
