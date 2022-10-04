@@ -1,0 +1,18 @@
+package model
+
+class Administrador ( id: Int , nombre: String, private var clave: Int)
+    : Persona (id, nombre) {
+
+    override fun mostrarDatos() {
+        super.mostrarDatos()
+        println("Clave: $clave")
+    }
+
+    fun getClave(): Int{
+        return clave
+    }
+
+    fun setClave(clave: Int){
+        this.clave = clave
+    }
+}
