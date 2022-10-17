@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.t2_inicio.R
 
 class MainActivity : AppCompatActivity() {
 
