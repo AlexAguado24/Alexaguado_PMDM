@@ -2,4 +2,5 @@
 <resources>
     <dimen name="textoNormal">20sp</dimen>
     <dimen name="paddingNormal">20dp</dimen>
+    <dimen name="paddingDrawable">10dp</dimen>
 </resources>
