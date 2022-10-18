@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textoNormal">20sp</dimen>
+    <dimen name="paddingNormal">20dp</dimen>
+</resources>
