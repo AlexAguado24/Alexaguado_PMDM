@@ -237,4 +237,5 @@ Error while Launching activity
 Failed to launch an application on all devices
 
 
+12:16	Unsupported Modules Detected: Compilation is not supported for following modules: T2_Inicio. Unfortunately you can't have non-Gradle Java modules and Android-Gradle modules in one project.
 
