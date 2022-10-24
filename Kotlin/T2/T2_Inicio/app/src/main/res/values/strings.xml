@@ -4,4 +4,6 @@
     <string name="saludo2">Esto es otra linea</string>
     <string name="texto_pulsar">Pulsar</string>
     <string name="hint_edit">Introduce tu nombre</string>
+    <string name="texto_pasar">Pasar</string>
+    <string name="saludo_racuperado">, has pasado de pantalla</string>
 </resources>
