@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun acciones(){
-
+        botonEmpezar.setOnClickListener(this)
     }
 
 
@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 if (!textoNombre.text.isEmpty()) {
                     var intent: Intent = Intent(applicationContext,SecondActivity::class.java);
                     var bundle: Bundle = Bundle();
+                    intent.putExtras(bundle);
+                    startActivity(intent)
 
                 } else {
                     Toast.makeText(applicationContext,"Por favor introduce nombre",Toast.LENGTH_LONG).show()

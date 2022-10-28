@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PracticaCartas</string>
+    <string name="boton_empezar">Empezar</string>
 </resources>
