@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 if (!textoNombre.text.isEmpty()) {
                     var intent: Intent = Intent(applicationContext,SecondActivity::class.java);
                     var bundle: Bundle = Bundle();
+                    bundle.putString("Nombre",textoNombre.text.toString())
                     intent.putExtras(bundle);
                     startActivity(intent)
 
