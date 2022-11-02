@@ -5,20 +5,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:layout_margin="@dimen/margen_general">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         >
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/texto_saludo"
+            android:gravity="center"
+            android:padding="@dimen/padding_texto"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_texto"
+            android:gravity="center"
+            android:id="@+id/texto_nombre"
+            android:layout_marginTop="@dimen/margen_top"
+            android:text="@string/texto_nombre"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_texto"
+            android:id="@+id/peso"
+            android:layout_marginTop="@dimen/margen_top"
+            android:hint="@string/hint_peso"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_texto"
+            android:id="@+id/altura"
+            android:layout_marginTop="@dimen/margen_top"
+            android:hint="@string/hint_altura"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_texto"
+            android:id="@+id/sexo"
+            android:layout_marginTop="@dimen/margen_top"
+            android:hint="@string/hint_sexo"
+            />
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/saludo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/boton_evaluar"
+            android:padding="@dimen/padding_texto"
+            android:text="Evaluar"
+            android:layout_marginTop="@dimen/margen_top"
+            android:layout_gravity="center"/>
     </LinearLayout>
 
 

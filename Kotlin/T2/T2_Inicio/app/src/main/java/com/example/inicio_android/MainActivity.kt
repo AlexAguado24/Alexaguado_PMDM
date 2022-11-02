@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -47,12 +48,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     textoSaludo.setText(texto)
                     editNombre.setText("")
                 } else {
-                    Log.v("avisos","texto vacio")
+                   Toast.makeText(applicationContext, "Faltan datos", Toast.LENGTH_SHORT).show()
                 }
             }
             R.id.boton_pasar -> {
-                var notificacion = Snackbar.make(p0!!, "Snack completado", Snackbar.LENGTH_LONG)
-                notificacion.setAction("Seguro que quieres cerrar",{
+                var notificacion =
+                    Snackbar.make(p0!!, "Snack completado", Snackbar.LENGTH_LONG)
+                notificacion.setAction("Seguro que quieres cambiar",{
                     var intent: Intent = Intent(applicationContext, SecondActivity::class.java)
                     var datos: Bundle = Bundle();
                     datos.putString("nombre", editNombre.text.toString())

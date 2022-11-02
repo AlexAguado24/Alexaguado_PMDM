@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">CalculoIMC</string>
-    <string name="saludo">Hola mundo</string>
+    <string name="texto_saludo">Bienvenido a la aplicacion de IMC</string>
+    <string name="texto_nombre">Introduce tu nombre</string>
+    <string name="hint_peso">Introduce tu peso</string>
+    <string name="hint_altura">Introduce tu altura</string>
+    <string name="hint_sexo">Introduce tu sexo</string>
 </resources>

@@ -17,16 +17,22 @@ class SecondActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
+        instacias()
+        recuperarDatos()
+        iniciarUI()
     }
 
     private fun iniciarUI() {
         textoNombre.setText(nombreRecuperado+ resources.getString(R.string.saludo_racuperado));
-        /*imagenAndroid.setImageResource(R.drawable.)*/
+        imagenAndroid.setImageResource(R.drawable.ic_launcher_foreground)
         Log.v("datos_recuperados",edadRecuperada.toString())
     }
 
     private fun recuperarDatos() {
+        //texto nombre lo recupero del bundle
         var bundleRecuperado: Bundle? = intent.extras;
+        textoNombre.setText(nombreRecuperado+ resources.getString(R.string.saludo_racuperado));
+        imagenAndroid.setImageResource(R.drawable.ic_launcher_background)
         nombreRecuperado = bundleRecuperado?.getString("nombre","por defecto").toString()
         edadRecuperada = bundleRecuperado?.getInt("edad",18) ?: 0
 
