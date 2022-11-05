@@ -19,7 +19,8 @@
             android:id="@+id/boton_empezar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/boton_empezar"/>
+            android:text="@string/boton_empezar"
+            />
         <EditText
             android:layout_marginTop="@dimen/margin_top"
             android:layout_width="match_parent"
