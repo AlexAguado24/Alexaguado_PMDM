@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                 } else {
                     Toast.makeText(applicationContext,"Por favor introduce nombre",Toast.LENGTH_LONG).show()
+                    //Snackbar.make(v, "Por favor introduce nombre antes", Snackbar.LENGTH_SHORT).show()
                 }
             }
         }

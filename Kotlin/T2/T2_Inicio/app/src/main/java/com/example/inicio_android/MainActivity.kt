@@ -54,13 +54,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.boton_pasar -> {
                 var notificacion =
                     Snackbar.make(p0!!, "Snack completado", Snackbar.LENGTH_LONG)
-                notificacion.setAction("Seguro que quieres cambiar",{
-                    var intent: Intent = Intent(applicationContext, SecondActivity::class.java)
+                notificacion.setAction("Seguro que quieres cambiar"){
+                    val intent: Intent = Intent(applicationContext, SecondActivity::class.java)
                     var datos: Bundle = Bundle();
                     datos.putString("nombre", editNombre.text.toString())
                     intent.putExtras(datos)
                     startActivity(intent)
-                })
+                }
                 notificacion.show()
             }
         }
