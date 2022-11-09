@@ -14,7 +14,7 @@ class SecondActivity: AppCompatActivity(){
     lateinit var botonArriba: ImageButton;
     lateinit var botonAbajo: ImageButton;
     lateinit var imagenCarta: ImageView;
-    lateinit var nombreRecuperado: String;
+    var nombreRecuperado: String? = null;
     var numAleatorio: Int? = null;
     var contador: Int? = null;
     var cartaFuturo: Int = 0;
@@ -40,12 +40,13 @@ class SecondActivity: AppCompatActivity(){
         setContentView(R.layout.activity_second)
         instancia()
         iniciarUI()
+        recuperarDatos()
     }
 
     private fun iniciarUI(){
-        var nombre = nombreRecuperado;
+
         var snackbarEmpezar =
-            Snackbar.make(botonArriba, "Bienvenido $nombre", Snackbar.LENGTH_INDEFINITE)
+            Snackbar.make(botonArriba, "Bienvenido $nombreRecuperado", Snackbar.LENGTH_INDEFINITE)
         snackbarEmpezar.setAction("Empezar") {
             cogerCarta()
         }
@@ -72,6 +73,7 @@ class SecondActivity: AppCompatActivity(){
         numAleatorio = (Math.random()*13).toInt();
         cartaFuturo = arrayCartas[numAleatorio!!]
         imagenCarta.setImageResource(arrayCartas[cartaFuturo!!])
+
 
     }
 }
