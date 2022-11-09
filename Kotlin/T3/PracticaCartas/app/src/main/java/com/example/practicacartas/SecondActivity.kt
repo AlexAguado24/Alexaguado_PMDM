@@ -5,6 +5,7 @@ import android.os.PersistableBundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 
@@ -12,7 +13,7 @@ class SecondActivity: AppCompatActivity(){
 
     lateinit var botonArriba: ImageButton;
     lateinit var botonAbajo: ImageButton;
-    lateinit var imagenCarta: ImageButton;
+    lateinit var imagenCarta: ImageView;
     lateinit var nombreRecuperado: String;
     var numAleatorio: Int? = null;
     var contador: Int? = null;
@@ -57,10 +58,10 @@ class SecondActivity: AppCompatActivity(){
         botonAbajo = findViewById(R.id.boton_abajo)
         imagenCarta = findViewById(R.id.imagen_carta)
         botonArriba.setOnClickListener{
-
+            cogerCarta()
         }
         botonAbajo.setOnClickListener{
-
+            cogerCarta()
         }
     }
     private fun recuperarDatos(){
@@ -70,7 +71,7 @@ class SecondActivity: AppCompatActivity(){
     private fun cogerCarta(){
         numAleatorio = (Math.random()*13).toInt();
         cartaFuturo = arrayCartas[numAleatorio!!]
-        imagenCarta.setImageResource(arrayCartas[numAleatorio!!])
+        imagenCarta.setImageResource(arrayCartas[cartaFuturo!!])
 
     }
 }
