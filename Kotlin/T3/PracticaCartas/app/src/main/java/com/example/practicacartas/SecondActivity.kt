@@ -2,6 +2,7 @@ package com.example.practicacartas
 
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
@@ -15,9 +16,11 @@ class SecondActivity: AppCompatActivity(){
     lateinit var botonAbajo: ImageButton;
     lateinit var imagenCarta: ImageView;
     var nombreRecuperado: String? = null;
-    var numAleatorio: Int? = null;
+    var numAleatorio1: Int? = null;
+    var numAleatorio2: Int? = null;
     var contador: Int? = null;
     var cartaFuturo: Int = 0;
+    var cartaActual: Int = 0;
 
     var arrayCartas: Array<Int> = arrayOf(
         R.drawable.c1,
@@ -44,17 +47,19 @@ class SecondActivity: AppCompatActivity(){
     }
 
     private fun iniciarUI(){
-
+        botonArriba.visibility = View.GONE;
+        botonAbajo.visibility = View.GONE;
         var snackbarEmpezar =
             Snackbar.make(botonArriba, "Bienvenido $nombreRecuperado", Snackbar.LENGTH_INDEFINITE)
         snackbarEmpezar.setAction("Empezar") {
+            botonArriba.visibility = View.VISIBLE;
+            botonAbajo.visibility = View.VISIBLE;
             cogerCarta()
         }
         snackbarEmpezar.show()
     }
 
     private fun instancia() {
-
         botonArriba = findViewById(R.id.boton_arriba)
         botonAbajo = findViewById(R.id.boton_abajo)
         imagenCarta = findViewById(R.id.imagen_carta)
@@ -70,10 +75,11 @@ class SecondActivity: AppCompatActivity(){
         nombreRecuperado = bundleRecuperado?.getString("nombre").toString()
     }
     private fun cogerCarta(){
-        numAleatorio = (Math.random()*13).toInt();
-        cartaFuturo = arrayCartas[numAleatorio!!]
-        imagenCarta.setImageResource(arrayCartas[cartaFuturo!!])
-
+        numAleatorio1 = (Math.random()*13).toInt();
+        numAleatorio2 = (Math.random()*13).toInt()
+        cartaFuturo= arrayCartas[numAleatorio1!!]
+        cartaActual = arrayCartas[numAleatorio2!!]
+        imagenCarta.setImageResource(cartaActual)
 
     }
 }
