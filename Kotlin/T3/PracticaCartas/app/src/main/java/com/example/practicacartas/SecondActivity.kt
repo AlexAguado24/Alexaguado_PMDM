@@ -92,7 +92,7 @@ class SecondActivity: AppCompatActivity(){
         nombreRecuperado = bundleRecuperado?.getString("nombre").toString()
     }
     private fun cogerCarta(){
-        numAleatorio1 = numAleatorio2;
+        numAleatorio1 = (Math.random()*13).toInt();
         numAleatorio2 = (Math.random()*13).toInt()
         println(numAleatorio1)
         println(numAleatorio2)

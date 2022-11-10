@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/padding_general"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,6 +17,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pulsar"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Texto boton normal"
+            android:gravity="center_vertical|end"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pulsar"
+            android:src="@drawable/boton"
+            android:background="@android:color/transparent"
             />
         <TextView
             android:layout_width="match_parent"
