@@ -26,6 +26,8 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="@dimen/margin_top"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -33,28 +35,120 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pulsar"
-            android:src="@drawable/boton"
+            android:src="@drawable/fondo_boton"
             android:background="@android:color/transparent"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Texto boton normal"
+            android:text="Resultado Pulsacion"
             android:gravity="center_vertical|end"/>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="@dimen/margin_superior"
+        android:layout_marginTop="@dimen/margin_top"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
         <ToggleButton
-            android:checked="false"
-            android:text=""
+            android:textOn=""
             android:textOff=""
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"/>
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/boton_switch"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Resultado Pulsacion"
+            android:gravity="center_vertical|end"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="opcion1"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="opcion2"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="opcion3"
+                />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="opcion 4"/>
+        </RadioGroup>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Resultado Pulsacion"
+            android:gravity="center_vertical|end"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Check resultado"
+            android:gravity="center_vertical|end"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/fondo_framelayout" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pulsar"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ejemplo de text view"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Explicacion en FL"
+            android:layout_gravity="bottom|center_horizontal"
+            android:textColor="@android:color/white"/>
+    </FrameLayout>
+
+    <Button
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Pulsar"
+        android:id="@+id/boton_pulsar"/>
 
 </LinearLayout>

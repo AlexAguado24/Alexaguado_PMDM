@@ -20,7 +20,7 @@
                 android:scaleType="fitCenter"
                 android:layout_marginTop="80dp"
                 android:layout_gravity="top|center"
-                android:src="@drawable/up"
+                android:src="@drawable/fondo_botones_up"
                 android:background="@android:color/transparent"
                 android:id="@+id/boton_arriba"
                 android:alpha="0.6"
@@ -31,9 +31,9 @@
                 android:scaleType="fitXY"
                 android:layout_marginBottom="80dp"
                 android:layout_gravity="bottom|center"
-                android:id="@+id/boton_abajo"
-                android:src="@drawable/down"
+                android:src="@drawable/fondo_botones_down"
                 android:background="@android:color/transparent"
+                android:id="@+id/boton_abajo"
                 android:alpha="0.6"
                 android:contentDescription="@string/descripcion_abajo"/>
     </FrameLayout>
