@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     bundle.putString("nombre",textoNombre.text.toString())
                     intent.putExtras(bundle);
                     startActivity(intent)
-
+                    textoNombre.setText("")
                 } else {
                     Toast.makeText(applicationContext,"Por favor introduce nombre",Toast.LENGTH_LONG).show()
                     //Snackbar.make(v, "Por favor introduce nombre antes", Snackbar.LENGTH_SHORT).show()

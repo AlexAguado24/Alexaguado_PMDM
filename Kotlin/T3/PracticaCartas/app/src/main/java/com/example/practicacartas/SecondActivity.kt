@@ -1,5 +1,6 @@
 package com.example.practicacartas
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
@@ -18,7 +19,7 @@ class SecondActivity: AppCompatActivity(){
     var nombreRecuperado: String? = null;
     var numAleatorio1: Int? = null;
     var numAleatorio2: Int? = null;
-    var contador: Int? = null;
+    var contador: Int = 0;
     var cartaFuturo: Int = 0;
     var cartaActual: Int = 0;
 
@@ -54,7 +55,9 @@ class SecondActivity: AppCompatActivity(){
         snackbarEmpezar.setAction("Empezar") {
             botonArriba.visibility = View.VISIBLE;
             botonAbajo.visibility = View.VISIBLE;
-            cogerCarta()
+            numAleatorio1 = (Math.random()*13).toInt();
+            cartaActual = arrayCartas[numAleatorio1!!]
+            imagenCarta.setImageResource(cartaActual)
         }
         snackbarEmpezar.show()
     }
@@ -65,9 +68,23 @@ class SecondActivity: AppCompatActivity(){
         imagenCarta = findViewById(R.id.imagen_carta)
         botonArriba.setOnClickListener{
             cogerCarta()
+            if (cartaActual > cartaFuturo) {
+                contador++;
+            } else {
+                terminarJuego()
+                botonArriba.visibility = View.GONE;
+                botonAbajo.visibility = View.GONE;
+            }
         }
         botonAbajo.setOnClickListener{
             cogerCarta()
+            if (cartaActual < cartaFuturo) {
+                contador++;
+            } else {
+                terminarJuego()
+                botonArriba.visibility = View.GONE;
+                botonAbajo.visibility = View.GONE;
+            }
         }
     }
     private fun recuperarDatos(){
@@ -75,11 +92,22 @@ class SecondActivity: AppCompatActivity(){
         nombreRecuperado = bundleRecuperado?.getString("nombre").toString()
     }
     private fun cogerCarta(){
-        numAleatorio1 = (Math.random()*13).toInt();
+        numAleatorio1 = numAleatorio2;
         numAleatorio2 = (Math.random()*13).toInt()
-        cartaFuturo= arrayCartas[numAleatorio1!!]
-        cartaActual = arrayCartas[numAleatorio2!!]
+        println(numAleatorio1)
+        println(numAleatorio2)
+        cartaFuturo= arrayCartas[numAleatorio2!!]
+        cartaActual = arrayCartas[numAleatorio1!!]
         imagenCarta.setImageResource(cartaActual)
+    }
 
+    private fun terminarJuego(){
+        var mensajeFinal =
+            Snackbar.make(botonArriba, "Has perdido con $contador puntos", Snackbar.LENGTH_INDEFINITE)
+        mensajeFinal.setAction("Continuar"){
+            var intent: Intent = Intent(applicationContext,MainActivity::class.java);
+            startActivity(intent)
+        }
+        mensajeFinal.show()
     }
 }
