@@ -9,6 +9,17 @@ import android.widget.EditText
 class MainActivity : AppCompatActivity(), View.OnClickListener{
     private lateinit var botonUno: Button;
     private lateinit var botonDos: Button;
+    private lateinit var botonTres: Button;
+    private lateinit var botonCuatro: Button;
+    private lateinit var botonCinco: Button;
+    private lateinit var botonSeis: Button;
+    private lateinit var botonSiete: Button;
+    private lateinit var botonOcho: Button;
+    private lateinit var botonNueve: Button;
+    private lateinit var botonCero: Button;
+    private lateinit var botonComa: Button;
+    private lateinit var botonIgual: Button;
+    private lateinit var botonMas: Button;
     private var botonTres: Button? = null;
     private var botonCuatro: Button? = null;
     private lateinit var editNumeros: EditText;

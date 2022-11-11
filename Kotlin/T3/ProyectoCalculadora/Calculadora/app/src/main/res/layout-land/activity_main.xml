@@ -6,44 +6,223 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/tamanioEdit"
         android:id="@+id/edit_numeros"
         android:textAlignment="textEnd"/>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/tamanioBotones"
         android:orientation="horizontal">
         <Button
             android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:layout_height="wrap_content"
-            android:text="4"
-            android:id="@+id/boton_cuatro"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="X!"
+            android:id="@+id/boton_equis_excla"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="AC"
+            android:id="@+id/boton_borrar"
             android:backgroundTint="@color/gris_science"
             />
         <Button
             android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:layout_height="wrap_content"
-            android:text="3"
-            android:id="@+id/boton_tres"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="+/-"
+            android:id="@+id/boton_mas_menos"
             android:backgroundTint="@color/gris_science"
             />
         <Button
             android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:layout_height="wrap_content"
-            android:text="2"
-            android:id="@+id/boton_dos"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="%"
+            android:id="@+id/boton_porcentaje"
+            android:backgroundTint="@color/gris_science"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="/"
+            android:id="@+id/boton_div"
             android:backgroundTint="@color/verde_operacion"
             />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tamanioBotones"
+        android:orientation="horizontal">
         <Button
             android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:layout_height="wrap_content"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="√"
+            android:id="@+id/boton_raiz"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="7"
+            android:id="@+id/boton_siete"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="8"
+            android:id="@+id/boton_ocho"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="9"
+            android:id="@+id/boton_nueve"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="X"
+            android:id="@+id/boton_multi"
+            android:backgroundTint="@color/verde_operacion"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tamanioBotones"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="^"
+            android:id="@+id/boton_potencia"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="4"
+            android:id="@+id/boton_cuatro"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="5"
+            android:id="@+id/boton_cinco"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="6"
+            android:id="@+id/boton_seis"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:id="@+id/boton_menos"
+            android:backgroundTint="@color/verde_operacion"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tamanioBotones"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="LN"
+            android:id="@+id/boton_ele_ene"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
             android:text="1"
             android:id="@+id/boton_uno"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="2"
+            android:id="@+id/boton_dos"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="3"
+            android:id="@+id/boton_tres"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="+"
+            android:id="@+id/boton_mas"
+            android:backgroundTint="@color/verde_operacion"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tamanioBotones"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="E"
+            android:id="@+id/boton_e"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.40"
+            android:layout_height="match_parent"
+            android:text="0"
+            android:id="@+id/boton_cero"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="."
+            android:id="@+id/boton_coma"
+            android:backgroundTint="@color/gris_numeros"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:layout_height="match_parent"
+            android:text="="
+            android:id="@+id/boton_igual"
             android:backgroundTint="@color/verde_operacion"
             />
     </LinearLayout>
