@@ -21,7 +21,7 @@ class SecondActivity: AppCompatActivity(){
     var numAleatorio2: Int? = null;
     var contador: Int = 0;
     var cartaFuturo: Int = 0;
-    var cartaActual: Int = 0;
+    //var cartaActual: Int = 0;
 
     var arrayCartas: Array<Int> = arrayOf(
         R.drawable.c1,
@@ -55,9 +55,17 @@ class SecondActivity: AppCompatActivity(){
         snackbarEmpezar.setAction("Empezar") {
             botonArriba.visibility = View.VISIBLE;
             botonAbajo.visibility = View.VISIBLE;
+<<<<<<< Updated upstream
             numAleatorio1 = (Math.random()*13).toInt();
             cartaActual = arrayCartas[numAleatorio1!!]
             imagenCarta.setImageResource(cartaActual)
+=======
+            cogerCarta()
+            numAleatorio2 = (Math.random()*13).toInt()
+            numAleatorio1 = (Math.random()*13).toInt();
+            cartaFuturo= arrayCartas[numAleatorio1!!]
+            imagenCarta.setImageResource(cartaFuturo)
+>>>>>>> Stashed changes
         }
         snackbarEmpezar.show()
     }
@@ -92,8 +100,8 @@ class SecondActivity: AppCompatActivity(){
         nombreRecuperado = bundleRecuperado?.getString("nombre").toString()
     }
     private fun cogerCarta(){
-        numAleatorio1 = (Math.random()*13).toInt();
         numAleatorio2 = (Math.random()*13).toInt()
+<<<<<<< Updated upstream
         println(numAleatorio1)
         println(numAleatorio2)
         cartaFuturo= arrayCartas[numAleatorio2!!]
@@ -109,5 +117,11 @@ class SecondActivity: AppCompatActivity(){
             startActivity(intent)
         }
         mensajeFinal.show()
+=======
+        var numeroActual: Int = numAleatorio2!!.toInt()
+        println(numAleatorio1.toString() + " " + numAleatorio2.toString())
+        cartaFuturo= arrayCartas[numeroActual!!]
+        imagenCarta.setImageResource(cartaFuturo)
+>>>>>>> Stashed changes
     }
 }
