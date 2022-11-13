@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="tamanioEdit">150dp</dimen>
-    <dimen name="tamanioBotones">116.5dp</dimen>
+    <dimen name="tamanioEdit">165dp</dimen>
+    <dimen name="tamanioBotones">125dp</dimen>
+    <dimen name="tamanio_texto">50dp</dimen>
 </resources>
