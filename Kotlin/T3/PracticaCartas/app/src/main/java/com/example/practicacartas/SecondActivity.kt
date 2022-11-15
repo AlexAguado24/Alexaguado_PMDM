@@ -16,7 +16,7 @@ class SecondActivity: AppCompatActivity(){
     lateinit var botonArriba: ImageButton;
     lateinit var botonAbajo: ImageButton;
     lateinit var imagenCarta: ImageView;
-    var nombreRecuperado: String? = null;
+    lateinit var nombreRecuperado: String;
     var numAleatorio1: Int? = null;
     var numAleatorio2: Int? = null;
     var contador: Int = 0;
@@ -42,13 +42,14 @@ class SecondActivity: AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
+        recuperarDatos()
         instancia()
         iniciarUI()
-        recuperarDatos()
         cogerCarta()
     }
 
     private fun iniciarUI(){
+        //nombreRecuperado = bundleRecuperado?.getString("nombre",).toString()
         botonArriba.visibility = View.GONE;
         botonAbajo.visibility = View.GONE;
         var snackbarEmpezar =
@@ -93,8 +94,8 @@ class SecondActivity: AppCompatActivity(){
         }
     }
     private fun recuperarDatos(){
-        var bundleRecuperado: Bundle? = intent.extras;
-        nombreRecuperado = bundleRecuperado?.getString("nombre").toString()
+        var bundleRecuperado = intent.extras;
+        nombreRecuperado = bundleRecuperado!!.getString("nombre",).toString()
     }
     private fun cogerCarta(){
         numAleatorio2 = (Math.random()*13).toInt()
