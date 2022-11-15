@@ -152,8 +152,8 @@
             android:layout_width="0dp"
             android:layout_weight="0.20"
             android:layout_height="match_parent"
-            android:text="LN"
-            android:id="@+id/boton_ele_ene"
+            android:text="log"
+            android:id="@+id/boton_log"
             android:backgroundTint="@color/gris_numeros"
             />
         <Button

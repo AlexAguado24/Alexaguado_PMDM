@@ -29,12 +29,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     private var botonEquiExcla: Button? = null;
     private var botonRaiz: Button? = null;
     private var botonPotencia: Button? = null;
-    private var botonEleEne: Button? = null;
+    private var botonLog: Button? = null;
     private var botonE: Button? = null;
     private lateinit var editNumeros: EditText;
-    private var opUno: Int = 0;
-    private var opDos: Int = 0;
-    private var resultado: Int = 0;
+    private lateinit var text: String;
+    private var opUno: Double = 0.0;
+    private var opDos: Double = 0.0;
+    private var resultado: Double = 0.0;
 
     private lateinit var signo: String;
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,7 +69,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         botonEquiExcla?.setOnClickListener(this)
         botonRaiz?.setOnClickListener(this)
         botonPotencia?.setOnClickListener(this)
-        botonEleEne?.setOnClickListener(this)
+        botonLog?.setOnClickListener(this)
         botonE?.setOnClickListener(this)
     }
 
@@ -96,7 +97,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         botonEquiExcla = findViewById(R.id.boton_equis_excla)
         botonRaiz = findViewById(R.id.boton_raiz)
         botonPotencia = findViewById(R.id.boton_potencia)
-        botonEleEne = findViewById(R.id.boton_ele_ene)
+        botonLog = findViewById(R.id.boton_log)
         botonE = findViewById(R.id.boton_e)
     }
 
@@ -134,20 +135,72 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
             }
             R.id.boton_borrar->{
                 editNumeros.setText("")
-                opUno = 0
+                opUno = 0.0
             }
             R.id.boton_coma->{
                 editNumeros.append((p0 as Button).text)
             }
             R.id.boton_mas->{
                 signo = (p0 as Button).text.toString()
+                text = editNumeros.text.toString()
+                opUno = text.toDouble()
                 editNumeros.setText("")
             }
+            R.id.boton_menos->{
+                signo = (p0 as Button).text.toString()
+                text = editNumeros.text.toString()
+                opUno = text.toDouble()
+                editNumeros.setText("")
+            }
+            R.id.boton_multi->{
+                signo = (p0 as Button).text.toString()
+                text = editNumeros.text.toString()
+                opUno = text.toDouble()
+                editNumeros.setText("")
+            }
+            R.id.boton_div->{
+                signo = (p0 as Button).text.toString()
+                text = editNumeros.text.toString()
+                opUno = text.toDouble()
+                editNumeros.setText("")
+            }
+            R.id.boton_porcentaje->{
+                signo = (p0 as Button).text.toString()
+                text = editNumeros.text.toString()
+                opUno = text.toDouble()
+                editNumeros.setText("")
+            }
+            R.id.boton_mas_menos->{
+                text = editNumeros.text.toString()
+                opUno = text.toDouble() * -1
+                editNumeros.setText(opUno.toString())
+            }
+            R.id.boton_e->{
+                opUno = 2.718;
+                editNumeros.setText(opUno.toString())
+            }
             R.id.boton_igual->{
-                opDos = (editNumeros.text as Int)
+                text = editNumeros.text.toString()
+                opDos = text.toDouble()
                 when (signo) {
                     "+"->{
                         resultado = opUno.plus(opDos)
+                        editNumeros.setText(resultado.toString())
+                    }
+                    "-"->{
+                        resultado = opUno.minus(opDos)
+                        editNumeros.setText(resultado.toString())
+                    }
+                    "X"->{
+                        resultado = opUno.times(opDos)
+                        editNumeros.setText(resultado.toString())
+                    }
+                    "/"->{
+                        resultado = opUno.div(opDos)
+                        editNumeros.setText(resultado.toString())
+                    }
+                    "%"->{
+                        resultado = opUno.rem(opDos)
                         editNumeros.setText(resultado.toString())
                     }
                 }

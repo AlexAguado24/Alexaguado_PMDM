@@ -45,6 +45,7 @@ class SecondActivity: AppCompatActivity(){
         instancia()
         iniciarUI()
         recuperarDatos()
+        cogerCarta()
     }
 
     private fun iniciarUI(){
@@ -55,17 +56,13 @@ class SecondActivity: AppCompatActivity(){
         snackbarEmpezar.setAction("Empezar") {
             botonArriba.visibility = View.VISIBLE;
             botonAbajo.visibility = View.VISIBLE;
-
             numAleatorio1 = (Math.random()*13).toInt();
             cartaActual = arrayCartas[numAleatorio1!!]
             imagenCarta.setImageResource(cartaActual)
-
-            cogerCarta()
-            numAleatorio2 = (Math.random()*13).toInt()
+            /*numAleatorio2 = (Math.random()*13).toInt()
             numAleatorio1 = (Math.random()*13).toInt();
             cartaFuturo= arrayCartas[numAleatorio1!!]
-            imagenCarta.setImageResource(cartaFuturo)
-
+            imagenCarta.setImageResource(cartaFuturo)*/
         }
         snackbarEmpezar.show()
     }
@@ -101,11 +98,11 @@ class SecondActivity: AppCompatActivity(){
     }
     private fun cogerCarta(){
         numAleatorio2 = (Math.random()*13).toInt()
-
+        numAleatorio2 = (Math.random()*13).toInt()
         println(numAleatorio1)
         println(numAleatorio2)
-        cartaFuturo= arrayCartas[numAleatorio2!!]
         cartaActual = arrayCartas[numAleatorio1!!]
+        cartaFuturo= arrayCartas[numAleatorio2!!]
         imagenCarta.setImageResource(cartaActual)
     }
 
