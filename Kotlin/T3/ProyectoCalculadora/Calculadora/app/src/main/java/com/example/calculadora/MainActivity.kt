@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         setContentView(R.layout.activity_main)
         instancias();
         acciones();
-        supportActionBar?.hide();
+        /*supportActionBar?.hide();*/
     }
 
     private fun acciones() {
