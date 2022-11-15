@@ -17,10 +17,9 @@ class SecondActivity: AppCompatActivity(){
     lateinit var botonAbajo: ImageButton;
     lateinit var imagenCarta: ImageView;
     lateinit var nombreRecuperado: String;
-    var numAleatorio1: Int? = null;
-    var numAleatorio2: Int? = null;
+    var numAleatorio1: Int = 0;
+    var numAleatorio2: Int = 0;
     var contador: Int = 0;
-    var cartaFuturo: Int = 0;
     var cartaActual: Int = 0;
 
     var arrayCartas: Array<Int> = arrayOf(
@@ -45,7 +44,7 @@ class SecondActivity: AppCompatActivity(){
         recuperarDatos()
         instancia()
         iniciarUI()
-        cogerCarta()
+        //cogerCarta()
     }
 
     private fun iniciarUI(){
@@ -74,7 +73,7 @@ class SecondActivity: AppCompatActivity(){
         imagenCarta = findViewById(R.id.imagen_carta)
         botonArriba.setOnClickListener{
             cogerCarta()
-            if (cartaActual > cartaFuturo) {
+            if (numAleatorio1 >= numAleatorio2) {
                 contador++;
             } else {
                 terminarJuego()
@@ -84,7 +83,7 @@ class SecondActivity: AppCompatActivity(){
         }
         botonAbajo.setOnClickListener{
             cogerCarta()
-            if (cartaActual < cartaFuturo) {
+            if (numAleatorio1 < numAleatorio2) {
                 contador++;
             } else {
                 terminarJuego()
@@ -99,12 +98,10 @@ class SecondActivity: AppCompatActivity(){
     }
     private fun cogerCarta(){
         numAleatorio2 = (Math.random()*13).toInt()
-        numAleatorio2 = (Math.random()*13).toInt()
         println(numAleatorio1)
         println(numAleatorio2)
-        cartaActual = arrayCartas[numAleatorio1!!]
-        cartaFuturo= arrayCartas[numAleatorio2!!]
-        imagenCarta.setImageResource(cartaActual)
+        //cartaActual = arrayCartas[numAleatorio1!!]
+        imagenCarta.setImageResource(numAleatorio2)
     }
 
     private fun terminarJuego(){
@@ -118,7 +115,7 @@ class SecondActivity: AppCompatActivity(){
 
         var numeroActual: Int = numAleatorio2!!.toInt()
         println(numAleatorio1.toString() + " " + numAleatorio2.toString())
-        cartaFuturo= arrayCartas[numeroActual!!]
-        imagenCarta.setImageResource(cartaFuturo)
+        //cartaFuturo= arrayCartas[numeroActual!!]
+        imagenCarta.setImageResource(numeroActual)
     }
 }
