@@ -6,6 +6,9 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import kotlin.math.ln
+import kotlin.math.pow
+import kotlin.math.sqrt
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{
     private lateinit var botonUno: Button;
@@ -177,6 +180,26 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                 text = editNumeros.text.toString()
                 opUno = text.toDouble() * -1
                 editNumeros.setText(opUno.toString())
+            }
+            R.id.boton_raiz->{
+                text = editNumeros.text.toString()
+                opUno = text.toDouble()
+                editNumeros.setText(sqrt(opUno).toString())
+            }
+            R.id.boton_potencia->{
+                text = editNumeros.text.toString()
+                opUno = text.toDouble()
+                editNumeros.setText(opUno.pow(2).toString())
+            }
+            R.id.boton_log->{
+                text = editNumeros.text.toString()
+                opUno = text.toDouble()
+                editNumeros.setText(ln(opUno).toString())
+            }
+            R.id.boton_equis_excla->{
+                text = editNumeros.text.toString()
+                opUno = text.toDouble()
+                editNumeros.setText(opUno.pow(2).toString())
             }
             R.id.boton_e->{
                 opUno = 2.718;
