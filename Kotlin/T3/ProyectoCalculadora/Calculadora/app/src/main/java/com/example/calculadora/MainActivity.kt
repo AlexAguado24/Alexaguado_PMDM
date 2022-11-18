@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.calculadora.databinding.ActivityMainBinding
 import kotlin.math.ln
 import kotlin.math.pow
 import kotlin.math.sqrt
@@ -41,13 +42,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     private var opDos: Double = 0.0;
     private var resultado: Double = 0.0;
     private lateinit var signo: String;
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         instancias();
         acciones();
-        /*supportActionBar?.hide();*/
+        binding.editNumeros.text
     }
 
     private fun acciones() {
