@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{
     private lateinit var botonUno: Button;
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     private var botonPotencia: Button? = null;
     private var botonLog: Button? = null;
     private var botonE: Button? = null;
-    private lateinit var editNumeros: EditText;
+    private lateinit var editNumeros: TextView;
     private lateinit var text: String;
     private var opUno: Double = 0.0;
     private var opDos: Double = 0.0;

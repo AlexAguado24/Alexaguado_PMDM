@@ -15,12 +15,11 @@ class SecondActivity: AppCompatActivity(){
 
     lateinit var botonArriba: ImageButton;
     lateinit var botonAbajo: ImageButton;
-    lateinit var imagenCarta: ImageView;
+    lateinit var imagenCarta: ImageView ;
     lateinit var nombreRecuperado: String;
     var numAleatorio1: Int = 0;
     var numAleatorio2: Int = 0;
     var contador: Int = 0;
-    var cartaActual: Int = 0;
 
     var arrayCartas: Array<Int> = arrayOf(
         R.drawable.c1,
@@ -44,7 +43,30 @@ class SecondActivity: AppCompatActivity(){
         recuperarDatos()
         instancia()
         iniciarUI()
-        //cogerCarta()
+        acciones()
+    }
+
+    private fun acciones() {
+        botonArriba.setOnClickListener{
+            numAleatorio2 = (Math.random()*13).toInt()
+            if (numAleatorio1 < numAleatorio2) {
+                imagenCarta.setImageResource(arrayCartas[numAleatorio2!!])
+                numAleatorio1 = numAleatorio2
+                contador++;
+            } else if (numAleatorio1>numAleatorio2){
+                terminarJuego()
+            }
+        }
+        botonAbajo.setOnClickListener{
+            numAleatorio2 = (Math.random()*13).toInt()
+            if (numAleatorio1 > numAleatorio2) {
+                imagenCarta.setImageResource(arrayCartas[numAleatorio2!!])
+                numAleatorio1 = numAleatorio2
+                contador++;
+            } else if (numAleatorio1 < numAleatorio2){
+                terminarJuego()
+            }
+        }
     }
 
     private fun iniciarUI(){
@@ -57,8 +79,7 @@ class SecondActivity: AppCompatActivity(){
             botonArriba.visibility = View.VISIBLE;
             botonAbajo.visibility = View.VISIBLE;
             numAleatorio1 = (Math.random()*13).toInt();
-            cartaActual = arrayCartas[numAleatorio1!!]
-            imagenCarta.setImageResource(cartaActual)
+            imagenCarta.setImageResource(arrayCartas[numAleatorio1!!])
             /*numAleatorio2 = (Math.random()*13).toInt()
             numAleatorio1 = (Math.random()*13).toInt();
             cartaFuturo= arrayCartas[numAleatorio1!!]
@@ -71,40 +92,14 @@ class SecondActivity: AppCompatActivity(){
         botonArriba = findViewById(R.id.boton_arriba)
         botonAbajo = findViewById(R.id.boton_abajo)
         imagenCarta = findViewById(R.id.imagen_carta)
-        botonArriba.setOnClickListener{
-            cogerCarta()
-            if (numAleatorio1 >= numAleatorio2) {
-                contador++;
-            } else {
-                terminarJuego()
-                botonArriba.visibility = View.GONE;
-                botonAbajo.visibility = View.GONE;
-            }
-        }
-        botonAbajo.setOnClickListener{
-            cogerCarta()
-            if (numAleatorio1 < numAleatorio2) {
-                contador++;
-            } else {
-                terminarJuego()
-                botonArriba.visibility = View.GONE;
-                botonAbajo.visibility = View.GONE;
-            }
-        }
     }
     private fun recuperarDatos(){
         var bundleRecuperado = intent.extras;
         nombreRecuperado = bundleRecuperado!!.getString("nombre",).toString()
     }
-    private fun cogerCarta(){
-        numAleatorio2 = (Math.random()*13).toInt()
-        println(numAleatorio1)
-        println(numAleatorio2)
-        //cartaActual = arrayCartas[numAleatorio1!!]
-        imagenCarta.setImageResource(numAleatorio2)
-    }
-
     private fun terminarJuego(){
+        botonArriba.visibility = View.GONE;
+        botonAbajo.visibility = View.GONE;
         var mensajeFinal =
             Snackbar.make(botonArriba, "Has perdido con $contador puntos", Snackbar.LENGTH_INDEFINITE)
         mensajeFinal.setAction("Continuar"){
@@ -112,10 +107,5 @@ class SecondActivity: AppCompatActivity(){
             startActivity(intent)
         }
         mensajeFinal.show()
-
-        var numeroActual: Int = numAleatorio2!!.toInt()
-        println(numAleatorio1.toString() + " " + numAleatorio2.toString())
-        //cartaFuturo= arrayCartas[numeroActual!!]
-        imagenCarta.setImageResource(numeroActual)
     }
 }
