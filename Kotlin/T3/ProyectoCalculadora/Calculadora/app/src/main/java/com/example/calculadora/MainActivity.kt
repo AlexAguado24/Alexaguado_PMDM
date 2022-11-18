@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     private var opUno: Double = 0.0;
     private var opDos: Double = 0.0;
     private var resultado: Double = 0.0;
-
     private lateinit var signo: String;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -137,6 +137,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
             R.id.boton_borrar->{
                 editNumeros.setText("")
                 opUno = 0.0
+                opDos = 0.0
+                resultado = 0.0
             }
             R.id.boton_coma->{
                 editNumeros.append((p0 as Button).text)
@@ -201,7 +203,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                         editNumeros.setText(resultado.toString())
                     }
                     "%"->{
-                        resultado = opUno.rem(opDos)
+                        resultado = opUno % opDos
                         editNumeros.setText(resultado.toString())
                     }
                 }

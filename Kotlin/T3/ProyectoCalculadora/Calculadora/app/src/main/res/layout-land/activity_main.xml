@@ -9,10 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/tamanioEdit"
         android:id="@+id/edit_numeros"
-        android:textAlignment="textEnd"/>
+        android:gravity="center|end"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/tamanioBotones"
+        android:layout_height="0dp"
+        android:layout_weight="0.20"
         android:orientation="horizontal">
         <Button
             android:layout_width="0dp"
@@ -57,7 +58,8 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/tamanioBotones"
+        android:layout_height="0dp"
+        android:layout_weight="0.20"
         android:orientation="horizontal">
         <Button
             android:layout_width="0dp"
@@ -102,7 +104,8 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/tamanioBotones"
+        android:layout_height="0dp"
+        android:layout_weight="0.20"
         android:orientation="horizontal">
         <Button
             android:layout_width="0dp"
@@ -147,7 +150,8 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/tamanioBotones"
+        android:layout_height="0dp"
+        android:layout_weight="0.20"
         android:orientation="horizontal">
         <Button
             android:layout_width="0dp"
@@ -192,7 +196,8 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/tamanioBotones"
+        android:layout_height="0dp"
+        android:layout_weight="0.20"
         android:orientation="horizontal">
         <Button
             android:layout_width="0dp"
