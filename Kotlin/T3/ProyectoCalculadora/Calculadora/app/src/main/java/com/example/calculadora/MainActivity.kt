@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import com.example.calculadora.databinding.ActivityMainBinding
 import kotlin.math.ln
 import kotlin.math.pow
 import kotlin.math.sqrt
@@ -42,15 +41,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     private var opDos: Double = 0.0;
     private var resultado: Double = 0.0;
     private lateinit var signo: String;
-    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
         instancias();
         acciones();
-        binding.editNumeros.text
     }
 
     private fun acciones() {
@@ -150,36 +146,42 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                 editNumeros.append((p0 as Button).text)
             }
             R.id.boton_mas->{
+                //opUno = editNumeros.text as Double
                 signo = (p0 as Button).text.toString()
                 text = editNumeros.text.toString()
                 opUno = text.toDouble()
                 editNumeros.setText("")
             }
             R.id.boton_menos->{
+                //opUno = editNumeros.text as Double
                 signo = (p0 as Button).text.toString()
                 text = editNumeros.text.toString()
                 opUno = text.toDouble()
                 editNumeros.setText("")
             }
             R.id.boton_multi->{
+                //opUno = editNumeros.text as Double
                 signo = (p0 as Button).text.toString()
                 text = editNumeros.text.toString()
                 opUno = text.toDouble()
                 editNumeros.setText("")
             }
             R.id.boton_div->{
+                //opUno = editNumeros.text as Double
                 signo = (p0 as Button).text.toString()
                 text = editNumeros.text.toString()
                 opUno = text.toDouble()
                 editNumeros.setText("")
             }
             R.id.boton_porcentaje->{
+                //opUno = editNumeros.text as Double
                 signo = (p0 as Button).text.toString()
                 text = editNumeros.text.toString()
                 opUno = text.toDouble()
                 editNumeros.setText("")
             }
             R.id.boton_mas_menos->{
+                //opUno = editNumeros.text as Double
                 text = editNumeros.text.toString()
                 opUno = text.toDouble() * -1
                 editNumeros.setText(opUno.toString())
@@ -195,7 +197,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                 editNumeros.setText(opUno.pow(2).toString())
             }
             R.id.boton_log->{
-                text = editNumeros.text.toString()
+                editNumeros.text.toString()
                 opUno = text.toDouble()
                 editNumeros.setText(ln(opUno).toString())
             }
@@ -208,6 +210,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                 opUno = 2.718;
                 editNumeros.setText(opUno.toString())
             }
+            //TODO boton X!
             R.id.boton_igual->{
                 text = editNumeros.text.toString()
                 opDos = text.toDouble()

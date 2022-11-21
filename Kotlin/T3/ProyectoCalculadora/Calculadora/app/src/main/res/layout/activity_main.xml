@@ -8,10 +8,11 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/tamanioEdit"
         android:id="@+id/edit_numeros"
+        android:editable="false"
         android:gravity="center|end"
         android:textSize="@dimen/tamanio_texto"/>
     <LinearLayout

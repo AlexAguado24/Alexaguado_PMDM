@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/tamanioEdit"
         android:id="@+id/edit_numeros"
+        android:editable="false"
         android:gravity="center|end"/>
     <LinearLayout
         android:layout_width="match_parent"
