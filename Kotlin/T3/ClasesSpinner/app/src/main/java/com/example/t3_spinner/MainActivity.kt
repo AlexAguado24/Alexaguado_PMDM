@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         setContentView(binding.root)
         instancias()
         asociarDatos();
-        rellenarSpinnerPersonalizado();
+        //rellenarSpinnerPersonalizado();
         acciones();
     }
 
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         binding.spinnerSimple.onItemSelectedListener = this
         binding.spinnerComplejo.onItemSelectedListener = this
         binding.botonAgregar.setOnClickListener{
-            var pais: Pais = Pais("Argentina", R.drawable.esc_argentina)
+            var pais: Pais = Pais("Argentina", R.drawable.esc_argentina,2,"Messi")
             //agregar un elemento desde la clase
             adaptadorPersonalizado.agregarPais(pais)
             //agregar un elemento a la lista desde la clase
@@ -60,26 +60,32 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             R.array.paises,android.R.layout.simple_spinner_item)
         //adaptadorSencillo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         //lista + xml + context --> adapter
-        adaptadorPersonalizado = AdaptadorPersonalizado(arraySpinner, applicationContext)
+        //primero relleno la lista y una ves rellena se la doy al adaptador para que aparezcan los elementos actualizados
+        rellenarSpinnerPersonalizado();
+        adaptadorPersonalizado = AdaptadorPersonalizado(arraySpinner, this)
+
     }
 
     private fun rellenarSpinnerPersonalizado() {
         // para rellenar el spinner hace falta una lista de elementos
         //lista --> array o arraylist o recurso del sistema
-        arraySpinner.add(Pais("España",R.drawable.esc_espania))
-        arraySpinner.add(Pais("Brasil",R.drawable.es_brasil))
-        arraySpinner.add(Pais("Alemania",R.drawable.esc_alemania))
-        arraySpinner.add(Pais("Francia",R.drawable.esc_france))
-        arraySpinner.add(Pais("Qatar",R.drawable.esc_qatar))
+        arraySpinner.add(Pais("España",R.drawable.esc_espania,1,"Pedri"))
+        arraySpinner.add(Pais("Brasil",R.drawable.es_brasil,5,"Neymar"))
+        arraySpinner.add(Pais("Alemania",R.drawable.esc_alemania,4,"Muller"))
+        arraySpinner.add(Pais("Francia",R.drawable.esc_france,2,"Mbappe"))
+        arraySpinner.add(Pais("Qatar",R.drawable.esc_qatar,0,"Desconocido"))
+        //adaptadorPersonalizado.notifyDataSetChanged()
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        when(p1!!.id){
+        when(p0!!.id){
             R.id.spinner_simple->{
                 Log.v("testSpinner",adaptadorSencillo.getItem(p2).toString())
             }
             R.id.spinner_complejo->{
-                Log.v("testSpinner",adaptadorPersonalizado.getItem(p2).toString())
+                var pais: Pais = adaptadorPersonalizado.getItem(p2) as Pais
+                //Log.v("testSpinner",pais.nombre)
+                binding.imagenPais.setImageResource(pais.imagen)
             }
         }
         //Snackbar.make(p1!!,p2.toString(),Snackbar.LENGTH_SHORT).show()
