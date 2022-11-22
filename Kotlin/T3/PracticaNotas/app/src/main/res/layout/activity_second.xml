@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondActivity"
-    android:padding="@dimen/padding_general"
     android:orientation="vertical">
 
     <Spinner
@@ -18,25 +17,30 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top">
+        android:layout_marginTop="@dimen/margin_top"
+        android:id="@+id/grupo_asignaturas">
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/radio_di"
             android:text="DI"
             android:textSize="25dp"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/radio_pmdm"
             android:text="PMDM"
             android:textSize="25dp"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/radio_psp"
             android:text="PSP"
             android:textSize="25dp"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/radio_eie"
             android:text="EIE"
             android:textSize="25dp"/>
         <RadioButton
@@ -55,6 +59,11 @@
             android:text="ING"
             android:textSize="25dp"/>
     </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
 
 
 
