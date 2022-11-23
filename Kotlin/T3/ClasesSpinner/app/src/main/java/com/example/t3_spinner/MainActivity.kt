@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             R.id.spinner_complejo->{
                 var pais: Pais = adaptadorPersonalizado.getItem(p2) as Pais
                 //Log.v("testSpinner",pais.nombre)
-                binding.imagenPais.setImageResource(pais.imagen)
+                //binding.imagenPais.setImageResource(pais.imagen)
             }
         }
         //Snackbar.make(p1!!,p2.toString(),Snackbar.LENGTH_SHORT).show()
