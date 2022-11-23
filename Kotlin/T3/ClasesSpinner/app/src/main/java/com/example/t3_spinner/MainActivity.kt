@@ -1,5 +1,6 @@
 package com.example.t3_spinner
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     lateinit var arraySpinner: ArrayList<Pais>;
     lateinit var adaptadorSencillo: ArrayAdapter<CharSequence>;
     lateinit var adaptadorPersonalizado: AdaptadorPersonalizado;
+    lateinit var pais: Pais
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +46,20 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             /*arraySpinner.add(pais)
             adaptadorPersonalizado.notifyDataSetChanged()*/
         }
-
+        binding.botonDetalle.setOnClickListener {
+            var intent: Intent = Intent(applicationContext,DetailActivity::class.java)
+            var bundle = Bundle();
+            //1ª ejemplo de como sacar datos de un elemento para enviar a otra pantalla
+            // var equipoSeleccionado = binding.spinnerComplejo.selectedItem
+            //2º creo pais como variable de clase y saco datos
+            /*bundle.putInt("imagen", pais.imagen)
+            bundle.putString("nombre", pais.nombre)
+            bundle.putString("estrella", pais.estrella)
+            bundle.putInt("titulos", pais.numeroTitulos)*/
+            bundle.putSerializable("equipo",pais)
+            intent.putExtras(bundle)
+            startActivity(intent)
+        }
     }
 
     private fun asociarDatos() {
@@ -83,9 +98,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 Log.v("testSpinner",adaptadorSencillo.getItem(p2).toString())
             }
             R.id.spinner_complejo->{
-                var pais: Pais = adaptadorPersonalizado.getItem(p2) as Pais
+                pais = adaptadorPersonalizado.getItem(p2) as Pais
                 //Log.v("testSpinner",pais.nombre)
-                //binding.imagenPais.setImageResource(pais.imagen)
+                binding.imagenEscudo.setImageResource(pais.imagen)
             }
         }
         //Snackbar.make(p1!!,p2.toString(),Snackbar.LENGTH_SHORT).show()
