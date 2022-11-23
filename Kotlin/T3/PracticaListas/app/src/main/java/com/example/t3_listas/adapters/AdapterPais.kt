@@ -5,14 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.t3_listas.R
-import com.example.t3_listas.model.Pais
+import com.example.t3_spinner.modelo.Pais
 
-class AdapterPais (private var lista: ArrayList<Pais>, private var context: Context): BaseAdapter(){
-
-
-
+class AdapterPais (private var lista: ArrayList<Pais>,private var context: Context): BaseAdapter() {
     override fun getCount(): Int {
         return lista.size
     }
@@ -26,19 +24,16 @@ class AdapterPais (private var lista: ArrayList<Pais>, private var context: Cont
     }
 
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-        var view:View = LayoutInflater.from(context).inflate(R.layout.item_lista, p2,false)
-
-        //recupero el objeto con el que tengo que trabajar
-        var pais:Pais = lista.get(p0)
-        //recuperar los elementos graficos donde poner las cosas
+        var view: View = LayoutInflater.from(context).inflate(R.layout.item_lista,p2,false)
+        // recupero el onjeto con el que tengo que trabajar
+        var pais: Pais = lista.get(p0)
+        //recuperar los elementos graficos
         var textoNombre: TextView = view.findViewById(R.id.nombre_fila)
-        var estrellaNombre: TextView = view.findViewById(R.id.estrella_fila)
-        var escudoImagen: TextView = view.findViewById(R.id.imagen_lista)
-
+        var textoEstrella: TextView = view.findViewById(R.id.estrella_fila)
+        var imagen: ImageView = view.findViewById(R.id.imagen_lista)
         textoNombre.setText(pais.nombre)
-        estrellaNombre.setText(pais.estrella)
-        escudoImagen.setText(pais.imagen)
-
+        textoEstrella.setText(pais.estrella)
+        imagen.setImageResource(pais.imagen)
 
         return view
     }
