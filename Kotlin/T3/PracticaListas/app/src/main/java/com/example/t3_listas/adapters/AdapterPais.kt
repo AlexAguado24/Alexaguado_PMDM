@@ -25,7 +25,7 @@ class AdapterPais (private var lista: ArrayList<Pais>,private var context: Conte
 
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
         var view: View = LayoutInflater.from(context).inflate(R.layout.item_lista,p2,false)
-        // recupero el onjeto con el que tengo que trabajar
+        // recupero el objeto con el que tengo que trabajar
         var pais: Pais = lista.get(p0)
         //recuperar los elementos graficos
         var textoNombre: TextView = view.findViewById(R.id.nombre_fila)

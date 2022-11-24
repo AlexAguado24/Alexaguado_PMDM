@@ -95,7 +95,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
         when(p0!!.id){
             R.id.spinner_simple->{
-                Log.v("testSpinner",adaptadorSencillo.getItem(p2).toString())
+                pais = adaptadorPersonalizado.getItem(p2) as Pais
+                //Log.v("testSpinner",pais.nombre)
+                binding.imagenEscudo.setImageResource(pais.imagen)
             }
             R.id.spinner_complejo->{
                 pais = adaptadorPersonalizado.getItem(p2) as Pais

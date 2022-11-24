@@ -9,28 +9,31 @@
 
     <ImageView
         android:id="@+id/imagen_lista"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/esc_espania" />
+        app:srcCompat="@drawable/ronaldo" />
 
     <TextView
-        android:id="@+id/nombre_fila"
+        android:id="@+id/texto_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="TextView"
-        android:textSize="25sp"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toEndOf="@+id/imagen_lista"
-        app:layout_constraintTop_toTopOf="@+id/imagen_lista" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/estrella_fila"
+        android:id="@+id/texto_genero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imagen_lista"
-        app:layout_constraintEnd_toEndOf="@+id/nombre_fila"
-        app:layout_constraintStart_toStartOf="@+id/nombre_fila" />
+        app:layout_constraintEnd_toEndOf="@+id/texto_nombre"
+        app:layout_constraintStart_toStartOf="@+id/texto_nombre" />
 </androidx.constraintlayout.widget.ConstraintLayout>
