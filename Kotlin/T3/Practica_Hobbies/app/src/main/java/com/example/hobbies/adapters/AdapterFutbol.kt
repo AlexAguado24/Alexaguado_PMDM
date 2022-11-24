@@ -35,7 +35,6 @@ class AdapterFutbol(private var lista: ArrayList<Futbol>,private var context:Con
         textoNombre.setText(futbol.nombre)
         textoEquipo.setText(futbol.equipo)
 
-
         return view
     }
 }

@@ -8,14 +8,14 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.hobbies.R
-import com.example.hobbies.models.Serie
+import com.example.hobbies.models.Juego
 
-class AdapterSeries(private var lista: ArrayList<Serie>, private var context: Context): BaseAdapter() {
+class AdapterJuegos(private var lista: ArrayList<Juego>, private var context: Context): BaseAdapter() {
     override fun getCount(): Int {
         return lista.size
     }
 
-    override fun getItem(p0: Int): Serie {
+    override fun getItem(p0: Int): Juego {
         return lista.get(p0)
     }
 
@@ -24,17 +24,15 @@ class AdapterSeries(private var lista: ArrayList<Serie>, private var context: Co
     }
 
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-        var view: View = LayoutInflater.from(context).inflate(R.layout.item_lista,p2,false)
-        // recupero el objeto con el que voy a trabajar
-        var serie: Serie = lista.get(p0)
-        // recupero los elementos
-        var imagen: ImageView = view.findViewById(R.id.imagen_lista)
+        var view: View = LayoutInflater.from(context).inflate(R.layout.item_lista,p2,false);
+        var juego: Juego = lista.get(p0)
+        var imagenJuego: ImageView = view.findViewById(R.id.imagen_lista)
         var textoNombre: TextView = view.findViewById(R.id.texto_nombre)
         var textoGenero: TextView = view.findViewById(R.id.texto_genero)
-        imagen.setImageResource(serie.imagenSerie)
-        textoNombre.setText(serie.nombre)
-        textoGenero.setText(serie.genero)
+        imagenJuego.setImageResource(juego.imagenJuego)
+        textoNombre.setText(juego.nombre)
+        textoGenero.setText(juego.tipo)
 
-        return view
+        return view;
     }
 }

@@ -20,5 +20,42 @@
         android:id="@+id/lista_hobbies"
         android:background="@color/color_lista"/>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        bef
+        android:padding="20dp"
+        android:background="@color/color_item"
+        android:id="@+id/f_layout">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ronaldo"
+            android:id="@+id/imagen_frame"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textSize="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/nombre_frame"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Genero"
+            android:textSize="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:id="@+id/genero_frame"
+            />
+
+    </FrameLayout>
+
+
 
 </LinearLayout>
