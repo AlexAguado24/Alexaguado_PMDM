@@ -20,8 +20,8 @@
             android:layout_width="0dp"
             android:layout_weight="0.20"
             android:layout_height="match_parent"
-            android:text="X!"
-            android:id="@+id/boton_equis_excla"
+            android:text="π"
+            android:id="@+id/boton_pi"
             android:backgroundTint="@color/gris_numeros"
             />
         <Button

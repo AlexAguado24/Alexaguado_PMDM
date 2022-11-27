@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     private lateinit var botonPorcentaje: Button;
     private lateinit var botonMasMenos: Button;
     private lateinit var botonBorrar: Button;
-    private var botonEquiExcla: Button? = null;
+    private var botonPi: Button? = null;
     private var botonRaiz: Button? = null;
     private var botonPotencia: Button? = null;
     private var botonLog: Button? = null;
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         botonPorcentaje.setOnClickListener(this)
         botonMasMenos.setOnClickListener(this)
         botonBorrar.setOnClickListener(this)
-        botonEquiExcla?.setOnClickListener(this)
+        botonPi?.setOnClickListener(this)
         botonRaiz?.setOnClickListener(this)
         botonPotencia?.setOnClickListener(this)
         botonLog?.setOnClickListener(this)
@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         botonPorcentaje = findViewById(R.id.boton_porcentaje)
         botonMasMenos = findViewById(R.id.boton_mas_menos)
         botonBorrar = findViewById(R.id.boton_borrar)
-        botonEquiExcla = findViewById(R.id.boton_equis_excla)
+        botonPi = findViewById(R.id.boton_pi)
         botonRaiz = findViewById(R.id.boton_raiz)
         botonPotencia = findViewById(R.id.boton_potencia)
         botonLog = findViewById(R.id.boton_log)
@@ -201,10 +201,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                 opUno = text.toDouble()
                 editNumeros.setText(ln(opUno).toString())
             }
-            R.id.boton_equis_excla->{
-                text = editNumeros.text.toString()
-                opUno = text.toDouble()
-                /*for ()*/
+            R.id.boton_pi->{
+                opUno = Math.PI
+                editNumeros.setText(opUno.toString())
             }
             R.id.boton_e->{
                 opUno = 2.718;
