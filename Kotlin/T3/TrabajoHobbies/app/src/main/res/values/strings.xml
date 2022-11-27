@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Hobbies</string>
+    <string-array name="hobbies_spinner">
+        <item>Futbol</item>
+        <item>Juegos</item>
+        <item>Series</item>
+    </string-array>
+</resources>

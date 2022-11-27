@@ -111,31 +111,31 @@ class SecondActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         //Indico la seleccion del cambio en el spinner a traves de la posicion y lo vuelvo a rellenar
         if (p2 == 0) {
             binding.listaHobbies.adapter = adaptadorFutbol
-            arrayFutbol = ArrayList()
+            /*arrayFutbol = ArrayList()
             arrayFutbol.add(Futbol(R.drawable.maradona, "Maradona", "Argentina"))
             arrayFutbol.add(Futbol(R.drawable.messi, "Messi", "FC Barcelona"))
             arrayFutbol.add(Futbol(R.drawable.ronaldo, "Ronaldo", "Brasil"))
             arrayFutbol.add(Futbol(R.drawable.zidane, "Zidane", "Francia"))
             adaptadorFutbol = AdapterFutbol(arrayFutbol, applicationContext)
-            adaptadorFutbol.notifyDataSetChanged()
+            adaptadorFutbol.notifyDataSetChanged()*/
         } else if (p2 == 1) {
             binding.listaHobbies.adapter = adaptadorJuego
-            arrayJuegos = ArrayList()
+            /*arrayJuegos = ArrayList()
             arrayJuegos.add(Juego(R.drawable.ffx, "F. Fantasy", "Roll"))
             arrayJuegos.add(Juego(R.drawable.god, "GOW", "Accion"))
             arrayJuegos.add(Juego(R.drawable.gt, "Gran Turismo", "Carreras"))
             arrayJuegos.add(Juego(R.drawable.metal, "Metal Gear", "Disparos"))
             adaptadorJuego = AdapterJuegos(arrayJuegos, applicationContext)
-            adaptadorJuego.notifyDataSetChanged()
+            adaptadorJuego.notifyDataSetChanged()*/
         } else if (p2 == 2) {
             binding.listaHobbies.adapter = adaptadorSeries
-            arraySeries = ArrayList()
+            /*arraySeries = ArrayList()
             arraySeries.add(Serie(R.drawable.lost, "Perdidos", "Misterio"))
             arraySeries.add(Serie(R.drawable.papel, "La casa de papel", "Accion"))
             arraySeries.add(Serie(R.drawable.tronos, "GOT", "Fantasia"))
             arraySeries.add(Serie(R.drawable.stranger, "Stranger Things", "Ciencia Ficcion"))
             adaptadorSeries = AdapterSeries(arraySeries, applicationContext)
-            adaptadorSeries.notifyDataSetChanged()
+            adaptadorSeries.notifyDataSetChanged()*/
         }
     }
 

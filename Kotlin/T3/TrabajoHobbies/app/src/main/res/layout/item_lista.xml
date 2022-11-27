@@ -16,11 +16,11 @@
         app:srcCompat="@drawable/ronaldo" />
 
     <TextView
-        android:id="@+id/texto_nombre"
+        android:id="@+id/nombre_lista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Nombre"
+        android:text="TextView"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.469"
@@ -28,12 +28,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/texto_genero"
+        android:id="@+id/genero_lista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Genero"
+        android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imagen_lista"
-        app:layout_constraintEnd_toEndOf="@+id/texto_nombre"
-        app:layout_constraintStart_toStartOf="@+id/texto_nombre" />
+        app:layout_constraintEnd_toEndOf="@+id/nombre_lista"
+        app:layout_constraintStart_toStartOf="@+id/nombre_lista" />
 </androidx.constraintlayout.widget.ConstraintLayout>
