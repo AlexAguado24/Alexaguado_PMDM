@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     private var botonPotencia: Button? = null;
     private var botonLog: Button? = null;
     private var botonE: Button? = null;
-    private lateinit var editNumeros: TextView;
+    private lateinit var editNumeros: EditText;
     private lateinit var text: String;
     private var opUno: Double = 0.0;
     private var opDos: Double = 0.0;
@@ -204,13 +204,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
             R.id.boton_equis_excla->{
                 text = editNumeros.text.toString()
                 opUno = text.toDouble()
-                editNumeros.setText(opUno.pow(2).toString())
+                /*for ()*/
             }
             R.id.boton_e->{
                 opUno = 2.718;
                 editNumeros.setText(opUno.toString())
             }
-            //TODO boton X!
             R.id.boton_igual->{
                 text = editNumeros.text.toString()
                 opDos = text.toDouble()
