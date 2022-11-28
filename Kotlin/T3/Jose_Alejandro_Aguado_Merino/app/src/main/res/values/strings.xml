@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Jose_Alejandro_Aguado_Merino</string>
+    <string-array name="Combustible">
+        <item>Hibrido</item>
+        <item>Electrico</item>
+        <item>Gasolina</item>
+        <item>Diesel</item>
+    </string-array>
+</resources>
