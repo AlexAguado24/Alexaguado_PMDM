@@ -26,14 +26,14 @@ class ComprobarActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                var adaptador = adaptadorSencillo.getItem(view!!.id) as String
+                var adaptador = adaptadorSencillo.getItem(position) as String
                 if (adaptador.equals("Hibrido")) {
                     binding.editAnio.setText("2018")
-                    binding.editAnio.isEnabled = false
+                    //binding.editAnio.isEnabled = false
                     binding.imagenEtiqueta.setImageResource(R.drawable.etiquetaeco)
                 } else if (adaptador.equals("Electrico")) {
                     binding.editAnio.setText("2020")
-                    binding.editAnio.isEnabled = false
+                   // binding.editAnio.isEnabled = false
                     binding.imagenEtiqueta.setImageResource(R.drawable.etiqueta0)
                 } else if (adaptador.equals("Gasolina")) {
                     if (binding.editAnio.text.toString().toInt() >= 2006) {
