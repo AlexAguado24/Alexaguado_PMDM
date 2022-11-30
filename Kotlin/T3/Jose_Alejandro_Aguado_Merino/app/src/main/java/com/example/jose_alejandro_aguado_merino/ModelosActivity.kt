@@ -20,14 +20,14 @@ class ModelosActivity : AppCompatActivity() {
 
     private fun instancias() {
         listaCoches = ArrayList();
-        listaCoches.add(Coche("volswagen","arteon",2015,"diesel",R.drawable.arteon))
-        listaCoches.add(Coche("opel","astra",2010,"gasolina",R.drawable.astra))
-        listaCoches.add(Coche("seat","cordoba",2012,"gasolina",R.drawable.cordoba))
-        listaCoches.add(Coche("opel","corsa",2018,"diesel",R.drawable.corsa))
-        listaCoches.add(Coche("volswagen","golf",2020,"gasolina",R.drawable.golf))
-        listaCoches.add(Coche("seat","ibiza",2019,"gasolina",R.drawable.ibiza))
-        listaCoches.add(Coche("opel","corsa",2021,"gasolina",R.drawable.modelo_corsa))
-        listaCoches.add(Coche("volswagen","tiguan",2022,"hibrido/gasolina",R.drawable.tiguan))
+        listaCoches.add(Coche("volswagen","arteon",2015,R.drawable.etiquetac,R.drawable.arteon))
+        listaCoches.add(Coche("opel","astra",2010,R.drawable.etiquetaeco,R.drawable.astra))
+        listaCoches.add(Coche("seat","cordoba",2012,R.drawable.etiquetac,R.drawable.cordoba))
+        listaCoches.add(Coche("opel","corsa",2018,R.drawable.etiqueta0,R.drawable.corsa))
+        listaCoches.add(Coche("volswagen","golf",2020,R.drawable.etiquetac,R.drawable.golf))
+        listaCoches.add(Coche("seat","ibiza",2019,R.drawable.etiquetaeco,R.drawable.ibiza))
+        listaCoches.add(Coche("opel","corsa",2021,R.drawable.etiquetaa,R.drawable.modelo_corsa))
+        listaCoches.add(Coche("volswagen","tiguan",2022,R.drawable.etiquetaeco,R.drawable.tiguan))
         adapterModelo = AdaptadorModelos(listaCoches,applicationContext)
         binding.listaModelos.adapter = adapterModelo;
     }

@@ -19,7 +19,7 @@
         android:layout_width="0.25dp"
         android:layout_height="0.25dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="299dp" />
+        app:layout_constraintGuide_begin="276dp" />
 
     <ImageView
         android:id="@+id/imagen_modelo"
@@ -41,13 +41,13 @@
         app:layout_constraintStart_toStartOf="@+id/guia_left"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/texto_modelo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Modelo"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imagen_combustible"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guia_right"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imagen_modelo"
+        app:srcCompat="@drawable/etiquetac" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

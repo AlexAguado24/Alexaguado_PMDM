@@ -28,11 +28,11 @@ class AdaptadorModelos(var lista: ArrayList<Coche>, var context: Context): BaseA
         var coche:Coche = lista.get(position);
         var imagenModelo: ImageView = view.findViewById(R.id.imagen_modelo)
         var nombreModelo: TextView = view.findViewById(R.id.nombre_modelo)
-        var textoModelo: TextView = view.findViewById(R.id.texto_modelo)
+        var imagenCombustible: ImageView = view.findViewById(R.id.imagen_combustible)
 
         imagenModelo.setImageResource(coche.imagen)
         nombreModelo.setText(coche.nombre)
-        textoModelo.setText(coche.marca)
+        imagenCombustible.setImageResource(coche.combustible)
 
         return view;
     }
