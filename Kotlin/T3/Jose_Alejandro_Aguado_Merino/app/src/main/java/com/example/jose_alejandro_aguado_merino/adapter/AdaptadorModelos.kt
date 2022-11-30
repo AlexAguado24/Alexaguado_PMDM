@@ -15,7 +15,7 @@ class AdaptadorModelos(var lista: ArrayList<Coche>, var context: Context): BaseA
         return lista.size
     }
 
-    override fun getItem(position: Int): Any {
+    override fun getItem(position: Int): Coche {
         return lista.get(position)
     }
 
