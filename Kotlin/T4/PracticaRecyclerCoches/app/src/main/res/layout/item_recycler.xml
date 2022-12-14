@@ -4,59 +4,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/imagen_coche"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="300dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/amggt" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline1"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:id="@+id/layout_inferior"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
-    <FrameLayout
-        android:id="@+id/frame_nombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline1"
-        app:layout_constraintStart_toStartOf="parent">
+        android:orientation="horizontal"
+        android:background="@drawable/fondo_layout"
+        app:layout_constraintBottom_toBottomOf="@+id/imagen_coche"
+        app:layout_constraintEnd_toEndOf="@+id/imagen_coche"
+        app:layout_constraintStart_toStartOf="@+id/imagen_coche">
 
         <TextView
-            android:id="@+id/texto_nombre"
-            android:layout_width="wrap_content"
+            android:id="@+id/item_modelo"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textColor="@color/red"
-            android:layout_gravity="center_horizontal"/>
-    </FrameLayout>
-    <FrameLayout
-        android:id="@+id/frame_modelo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline1">
-
-        <TextView
-            android:id="@+id/texto_modelo"
-            android:layout_width="wrap_content"
+            android:text="Modelo"
+            android:gravity="center"
+            android:textColor="@color/white"/>
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/item_boton"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:textSize="20dp"
-            android:textColor="@color/red"/>
-    </FrameLayout>
+            android:text="Ver Detalles"/>
 
-
-
-
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
