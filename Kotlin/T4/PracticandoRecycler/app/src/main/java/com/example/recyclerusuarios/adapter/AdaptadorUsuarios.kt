@@ -16,6 +16,12 @@ import com.google.android.material.snackbar.Snackbar
 class AdaptadorUsuarios(var lista: ArrayList<Usuario>, var contexto: Context) :
     RecyclerView.Adapter<AdaptadorUsuarios.MyHolder>() {
 
+    private lateinit var listener: OnRecyclerUsuarioListener
+
+    init {
+        listener = contexto as OnRecyclerUsuarioListener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         var vista: View =
             LayoutInflater.from(contexto).inflate(R.layout.item_recycler, parent, false)
@@ -28,7 +34,11 @@ class AdaptadorUsuarios(var lista: ArrayList<Usuario>, var contexto: Context) :
         holder.textoNombre.setText(usuarioActual.nombre)
         holder.textoApellido.setText(usuarioActual.apellido)
 
-        holder.textoNombre.setOnClickListener { Log.v("lista", "Texto nombre pulsado") }
+        holder.textoNombre.setOnClickListener{
+            //comunicar el usuario
+            listener.onUserSelected(usuarioActual)
+        }
+        //holder.textoNombre.setOnClickListener { Log.v("lista", "Texto nombre pulsado") }
         holder.textoApellido.setOnClickListener { Log.v("lista", "Texto apellido pulsado") }
         holder.imagenVista.setOnClickListener {
             Snackbar.make(
@@ -37,12 +47,21 @@ class AdaptadorUsuarios(var lista: ArrayList<Usuario>, var contexto: Context) :
                 Snackbar.LENGTH_SHORT
             ).show()
         }
+        holder.imagenVista.setOnLongClickListener {
+            listener.onUsuarioSelected(usuarioActual,position)
+            return@setOnLongClickListener true
+        }
 
     }
 
     override fun getItemCount(): Int {
         //tamaño de la lista
         return lista.size
+    }
+
+    interface OnRecyclerUsuarioListener{
+        fun onUserSelected(usuario: Usuario)
+        fun onUsuarioSelected(usuario: Usuario, position: Int)
     }
 
     inner class MyHolder(itemView: View) : ViewHolder(itemView) {

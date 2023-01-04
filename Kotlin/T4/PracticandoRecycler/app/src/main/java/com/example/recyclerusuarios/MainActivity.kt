@@ -6,12 +6,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclerusuarios.adapter.AdaptadorUsuarios
 import com.example.recyclerusuarios.databinding.ActivityMainBinding
 import com.example.recyclerusuarios.model.Usuario
+import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), AdaptadorUsuarios.OnRecyclerUsuarioListener {
 
     private lateinit var binding: ActivityMainBinding;
     private lateinit var listaUsuarios: ArrayList<Usuario>
     private lateinit var adaptadorUsuarios: AdaptadorUsuarios
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +53,14 @@ class MainActivity : AppCompatActivity() {
         listaUsuarios.add(Usuario("pelao","martin", 7894,R.drawable.male))
         adaptadorUsuarios = AdaptadorUsuarios(listaUsuarios,this)
 
+    }
+
+    override fun onUserSelected(usuario: Usuario) {
+        Snackbar.make(binding.root, "Comunicado ${usuario.nombre}", Snackbar.LENGTH_SHORT).show()
+    }
+
+    override fun onUsuarioSelected(usuario: Usuario, position: Int) {
+        Snackbar.make(binding.root, "Comunicado ${usuario.nombre} ${position}", Snackbar.LENGTH_SHORT).show()
     }
 
 
