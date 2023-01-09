@@ -11,8 +11,18 @@ import com.example.dialogos.R
 
 class DialogoConfirmacion : DialogFragment() {
 
+    // crear interfaz
+    // crear objeto de interfaz
+    // inicializo el objeto --> listener =
+    // llamo al método desde la pulsacion o accion que quiera
+    // implementarla en el destino
+    // utilizo los métodos implementados
+    private lateinit var listener: OnDialogoConfirmListener;
+    var funcionNula: ((Boolean) -> Unit)? = null
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        listener = context as OnDialogoConfirmListener
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -21,39 +31,48 @@ class DialogoConfirmacion : DialogFragment() {
         var builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
 
         // titulo
-        builder.setTitle("Titulo del cuadro de dialogo")
+        builder.setTitle("Titulo del cuadro de confirmacion")
         builder.setTitle(resources.getString(R.string.titulo_dialogo))
+
         //mensajes
         builder.setMessage("¿Estas seguro que quieres continuar?")
 
         //botones
         builder.setPositiveButton("OK") { dialog, which ->
-            Toast.makeText(
+            funcionNula?.invoke(true)
+            //listener.onDielogoSelected(true)
+            /*Toast.makeText(
                 requireContext(),
                 "Pulsado positivo",
                 Toast.LENGTH_SHORT
-            ).show()
+            ).show()*/
         }
         builder.setNegativeButton("Cancelar") { dialog, which ->
-            Toast.makeText(
+            funcionNula?.invoke(false)
+            //listener.onDielogoSelected(false)
+            /*Toast.makeText(
                 requireContext(),
                 "Pulsado negativo",
                 Toast.LENGTH_SHORT
-            ).show()
+            ).show()*/
         }
-        builder.setNeutralButton("Neutral") { dialog, which ->
+        /*builder.setNeutralButton("Neutral") { dialog, which ->
             Toast.makeText(
                 requireContext(),
                 "Pulsado neutral",
                 Toast.LENGTH_SHORT
             ).show()
-        }
+        }*/
 
         return builder.create()
     }
 
     override fun onDetach() {
         super.onDetach()
+    }
+
+    interface OnDialogoConfirmListener {
+        fun onDielogoSelected(seleccionado: Boolean)
     }
 
 }
