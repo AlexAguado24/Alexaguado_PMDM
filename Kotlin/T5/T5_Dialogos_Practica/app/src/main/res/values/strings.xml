@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">T5_Dialogos_Practica</string>
+    <string name="titulo_dialogo">Titulo del cuadro de confirmacion</string>
+</resources>
