@@ -7,10 +7,11 @@ import android.view.View.OnClickListener
 import com.example.dialogos.databinding.ActivityMainBinding
 import com.example.dialogos.dialogs.DialogoConfirmacion
 import com.example.dialogos.dialogs.DialogoLista
+import com.example.dialogos.dialogs.DialogoMultiple
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity(), OnClickListener,
-    DialogoConfirmacion.OnDialogoConfirmListener, DialogoLista.OnListaListener {
+    DialogoConfirmacion.OnDialogoConfirmListener, DialogoLista.OnListaListener, DialogoMultiple.OnListaMultipleSelected {
 
     private lateinit var binding: ActivityMainBinding
     private var dialogoConfirm: DialogoConfirmacion;
@@ -51,6 +52,9 @@ class MainActivity : AppCompatActivity(), OnClickListener,
             binding.botonLista.id -> {
                 DialogoLista().show(supportFragmentManager, "")
             }
+            binding.botonMultiple.id->{
+                DialogoMultiple().show(supportFragmentManager,"")
+            }
         }
     }
 
@@ -64,6 +68,10 @@ class MainActivity : AppCompatActivity(), OnClickListener,
 
     override fun onElementoListaSelected(elemento: String) {
         binding.textoLista.text = elemento
+    }
+
+    override fun onMultipleSelected(lista: ArrayList<String>) {
+        binding.textoMultiple.text = lista.size.toString()
     }
 
 
