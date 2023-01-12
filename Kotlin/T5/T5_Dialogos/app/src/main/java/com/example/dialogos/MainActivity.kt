@@ -8,6 +8,7 @@ import com.example.dialogos.databinding.ActivityMainBinding
 import com.example.dialogos.dialogs.DialogoConfirmacion
 import com.example.dialogos.dialogs.DialogoLista
 import com.example.dialogos.dialogs.DialogoMultiple
+import com.example.dialogos.dialogs.DialogoPersonalizado
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity(), OnClickListener,
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity(), OnClickListener,
     private fun acciones() {
         binding.botonConfirmacion.setOnClickListener(this)
         binding.botonLista.setOnClickListener(this)
+        binding.botonPersonalizado.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -54,6 +56,9 @@ class MainActivity : AppCompatActivity(), OnClickListener,
             }
             binding.botonMultiple.id->{
                 DialogoMultiple().show(supportFragmentManager,"")
+            }
+            binding.botonPersonalizado.id ->{
+                DialogoPersonalizado().show(supportFragmentManager,"")
             }
         }
     }
