@@ -15,7 +15,7 @@ class DialogoMultiple : DialogFragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        listener = context as On
+        listener = context as OnListaMultipleSelected
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
