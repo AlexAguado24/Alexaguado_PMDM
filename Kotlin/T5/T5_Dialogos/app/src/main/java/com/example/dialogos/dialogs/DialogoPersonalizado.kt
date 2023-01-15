@@ -57,4 +57,8 @@ class DialogoPersonalizado : DialogFragment() {
         super.onStart()
         instancias()
     }
+
+    interface OnDialogoPersonalizadoListener {
+        fun onDialogoSelected()
+    }
 }
