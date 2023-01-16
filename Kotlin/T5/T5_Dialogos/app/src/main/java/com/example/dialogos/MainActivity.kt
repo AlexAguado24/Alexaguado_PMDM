@@ -16,7 +16,7 @@ import com.google.android.material.snackbar.Snackbar
 class MainActivity : AppCompatActivity(), OnClickListener,
     DialogoConfirmacion.OnDialogoConfirmListener, DialogoLista.OnListaListener,
     DialogoMultiple.OnListaMultipleSelected, DatePickerDialog.OnDateSetListener,
-    TimePickerDialog.OnTimeSetListener{
+    TimePickerDialog.OnTimeSetListener, DialogoPersonalizado.OnDialogoPersonalizadoListener{
 
     private lateinit var binding: ActivityMainBinding
     private var dialogoConfirm: DialogoConfirmacion;
@@ -101,6 +101,10 @@ class MainActivity : AppCompatActivity(), OnClickListener,
 
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         Log.v("fecha","${hourOfDay} ${minute}")
+    }
+
+    override fun onDialogoSelected(nombre: String, pass: String) {
+        binding.textoPersonalizado.text = "${nombre}\n${pass}"
     }
 
 

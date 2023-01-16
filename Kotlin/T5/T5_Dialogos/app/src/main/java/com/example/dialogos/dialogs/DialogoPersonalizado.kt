@@ -21,10 +21,11 @@ class DialogoPersonalizado : DialogFragment() {
     private lateinit var editNombre: EditText
     private lateinit var editPass: EditText
     private lateinit var checkRecordar: CheckBox
+    private lateinit var listener: OnDialogoPersonalizadoListener
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        contexto = context
+        listener = context as OnDialogoPersonalizadoListener
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -40,13 +41,14 @@ class DialogoPersonalizado : DialogFragment() {
         acciones()
     }
 
-    fun acciones(){
+    fun acciones() {
         botonLogin.setOnClickListener {
-            Log.v("dialogo", "boton del dialogo pulsado")
+            listener.onDialogoSelected(editNombre.text.toString(), editPass.text.toString())
+            dismiss()
         }
     }
 
-    fun instancias(){
+    fun instancias() {
         botonLogin = vista.findViewById(R.id.boton_login)
         editNombre = vista.findViewById(R.id.edit_nombre)
         editPass = vista.findViewById(R.id.edit_pass)
@@ -59,6 +61,6 @@ class DialogoPersonalizado : DialogFragment() {
     }
 
     interface OnDialogoPersonalizadoListener {
-        fun onDialogoSelected()
+        fun onDialogoSelected(nombre: String, pass: String)
     }
 }
