@@ -1,18 +1,22 @@
 package com.example.dialogos
 
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.View.OnClickListener
+import android.widget.DatePicker
+import android.widget.TimePicker
 import com.example.dialogos.databinding.ActivityMainBinding
-import com.example.dialogos.dialogs.DialogoConfirmacion
-import com.example.dialogos.dialogs.DialogoLista
-import com.example.dialogos.dialogs.DialogoMultiple
-import com.example.dialogos.dialogs.DialogoPersonalizado
+import com.example.dialogos.dialogs.*
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity(), OnClickListener,
-    DialogoConfirmacion.OnDialogoConfirmListener, DialogoLista.OnListaListener, DialogoMultiple.OnListaMultipleSelected {
+    DialogoConfirmacion.OnDialogoConfirmListener, DialogoLista.OnListaListener,
+    DialogoMultiple.OnListaMultipleSelected, DatePickerDialog.OnDateSetListener,
+    TimePickerDialog.OnTimeSetListener{
 
     private lateinit var binding: ActivityMainBinding
     private var dialogoConfirm: DialogoConfirmacion;
@@ -41,6 +45,9 @@ class MainActivity : AppCompatActivity(), OnClickListener,
         binding.botonConfirmacion.setOnClickListener(this)
         binding.botonLista.setOnClickListener(this)
         binding.botonPersonalizado.setOnClickListener(this)
+        binding.botonComunicar.setOnClickListener(this)
+        binding.botonFecha.setOnClickListener(this)
+        binding.botonHora.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -54,11 +61,20 @@ class MainActivity : AppCompatActivity(), OnClickListener,
             binding.botonLista.id -> {
                 DialogoLista().show(supportFragmentManager, "")
             }
-            binding.botonMultiple.id->{
-                DialogoMultiple().show(supportFragmentManager,"")
+            binding.botonMultiple.id -> {
+                DialogoMultiple().show(supportFragmentManager, "")
             }
-            binding.botonPersonalizado.id ->{
-                DialogoPersonalizado().show(supportFragmentManager,"")
+            binding.botonPersonalizado.id -> {
+                DialogoPersonalizado().show(supportFragmentManager, "")
+            }
+            binding.botonComunicar.id -> {
+                DialogoComunicar.newInstance("Borja").show(supportFragmentManager, "")
+            }
+            binding.botonFecha.id -> {
+                DialogoFecha().show(supportFragmentManager,"")
+            }
+            binding.botonHora.id -> {
+                DialogoHora().show(supportFragmentManager,"")
             }
         }
     }
@@ -77,6 +93,14 @@ class MainActivity : AppCompatActivity(), OnClickListener,
 
     override fun onMultipleSelected(lista: ArrayList<String>) {
         binding.textoMultiple.text = lista.size.toString()
+    }
+
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        Log.v("fecha","${year} ${month} ${dayOfMonth}")
+    }
+
+    override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
+        Log.v("fecha","${hourOfDay} ${minute}")
     }
 
 
