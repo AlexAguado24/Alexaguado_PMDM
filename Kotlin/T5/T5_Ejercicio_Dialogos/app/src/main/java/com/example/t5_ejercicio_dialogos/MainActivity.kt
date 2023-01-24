@@ -8,12 +8,12 @@ import android.view.View.OnClickListener
 import android.widget.DatePicker
 import android.widget.TimePicker
 import com.example.t5_ejercicio_dialogos.databinding.ActivityMainBinding
-import com.example.t5_ejercicio_dialogos.dialogs.DialogoFecha
-import com.example.t5_ejercicio_dialogos.dialogs.DialogoHora
-import com.example.t5_ejercicio_dialogos.dialogs.DialogoPersonalizado
+import com.example.t5_ejercicio_dialogos.dialogs.*
+import com.example.t5_ejercicio_dialogos.models.Asignatura
 
 class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
-    DatePickerDialog.OnDateSetListener, DialogoPersonalizado.OnDialogoPersonalizadoListener {
+    DatePickerDialog.OnDateSetListener, DialogoPersonalizado.OnDialogoPersonalizadoListener,
+    DialogoAsignatura.OnAsignaturasListener {
 
     private lateinit var binding: ActivityMainBinding
     private var hora: Int = 0
@@ -22,12 +22,27 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
     private var mes: Int = 0
     private var dia: Int = 0
     private lateinit var nombreApellido: String
+    private lateinit var listaAsignaturas: ArrayList<Asignatura>
+    private lateinit var listaAsignaturasSeleccionadas: ArrayList<Asignatura>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        instancias();
         acciones();
+    }
+
+    private fun instancias() {
+        listaAsignaturas = ArrayList()
+        listaAsignaturas.add(Asignatura("PMDM"))
+        listaAsignaturas.add(Asignatura("DI"))
+        listaAsignaturas.add(Asignatura("AD"))
+        listaAsignaturas.add(Asignatura("SGE"))
+        listaAsignaturas.add(Asignatura("EIE"))
+        listaAsignaturas.add(Asignatura("ING"))
+
     }
 
     private fun acciones() {
@@ -44,12 +59,19 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         anio = year
-        mes = month
+        mes = month+1;
         dia = dayOfMonth
-        DialogoPersonalizado().show(supportFragmentManager,"")
+        DialogoPersonalizado().show(supportFragmentManager, "")
     }
 
     override fun onDialogoPersoSelected(nombreYApellido: String) {
         nombreApellido = nombreYApellido
+        val dialogo = DialogoConfirmacion.newInstance(nombreApellido, dia, mes, hora, minutos);
+        dialogo.show(supportFragmentManager,"")
+        DialogoAsignatura().show(supportFragmentManager,"")
+    }
+
+    override fun onListaAsignaturasSelection(listaAsignaturas: ArrayList<Asignatura>) {
+        TODO("Not yet implemented")
     }
 }
