@@ -21,6 +21,7 @@
         android:id="@+id/edit_notas"
         android:gravity="center"
         android:hint="Nota media"
+        android:inputType="number"
         />
     <Button
         android:layout_width="wrap_content"

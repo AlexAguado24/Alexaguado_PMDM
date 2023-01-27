@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
     private var dia: Int = 0
     private lateinit var nombreApellido: String
     private lateinit var listaAsignaturas: ArrayList<String>
-    private lateinit var valorNotas: String;
+    private lateinit var valorMedia: String;
+    private var cantidadAsignaturas: Int = 0;
 
 
 
@@ -35,6 +36,9 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
 
     private fun instancias() {
         listaAsignaturas = ArrayList();
+        listaAsignaturas.forEach {
+            cantidadAsignaturas++;
+        }
     }
 
     private fun acciones() {
@@ -69,6 +73,8 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
     }
 
     override fun onNotasSelected(nota: String) {
-        valorNotas =
+        valorMedia = nota;
+        val dialogoFinal = DialogoFinal.newInstance(nombreApellido, dia, mes, hora, minutos,cantidadAsignaturas,valorMedia)
+        dialogoFinal.show(supportFragmentManager,"")
     }
 }
