@@ -4,12 +4,10 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View.OnClickListener
 import android.widget.DatePicker
 import android.widget.TimePicker
 import com.example.t5_ejercicio_dialogos.databinding.ActivityMainBinding
 import com.example.t5_ejercicio_dialogos.dialogs.*
-import com.example.t5_ejercicio_dialogos.models.Asignatura
 
 class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
     DatePickerDialog.OnDateSetListener, DialogoPersonalizado.OnDialogoPersonalizadoListener,
@@ -22,8 +20,7 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
     private var mes: Int = 0
     private var dia: Int = 0
     private lateinit var nombreApellido: String
-    private lateinit var listaAsignaturas: ArrayList<Asignatura>
-    private lateinit var listaAsignaturasSeleccionadas: ArrayList<Asignatura>
+    private lateinit var listaAsignaturas: ArrayList<String>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,14 +32,7 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
     }
 
     private fun instancias() {
-        listaAsignaturas = ArrayList()
-        listaAsignaturas.add(Asignatura("PMDM"))
-        listaAsignaturas.add(Asignatura("DI"))
-        listaAsignaturas.add(Asignatura("AD"))
-        listaAsignaturas.add(Asignatura("SGE"))
-        listaAsignaturas.add(Asignatura("EIE"))
-        listaAsignaturas.add(Asignatura("ING"))
-
+        listaAsignaturas = ArrayList();
     }
 
     private fun acciones() {
@@ -71,7 +61,7 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
         DialogoAsignatura().show(supportFragmentManager,"")
     }
 
-    override fun onListaAsignaturasSelection(listaAsignaturas: ArrayList<Asignatura>) {
-        TODO("Not yet implemented")
+    override fun onListaAsignaturasSelection(asignaturas: ArrayList<String>) {
+        listaAsignaturas = asignaturas;
     }
 }
