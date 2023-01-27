@@ -11,7 +11,7 @@ import com.example.t5_ejercicio_dialogos.dialogs.*
 
 class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
     DatePickerDialog.OnDateSetListener, DialogoPersonalizado.OnDialogoPersonalizadoListener,
-    DialogoAsignatura.OnAsignaturasListener {
+    DialogoAsignatura.OnAsignaturasListener, DialogoNotas.OnDialogoNotasListener {
 
     private lateinit var binding: ActivityMainBinding
     private var hora: Int = 0
@@ -21,14 +21,16 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
     private var dia: Int = 0
     private lateinit var nombreApellido: String
     private lateinit var listaAsignaturas: ArrayList<String>
+    private lateinit var valorNotas: String;
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        instancias();
         acciones();
+        instancias();
     }
 
     private fun instancias() {
@@ -63,5 +65,10 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
 
     override fun onListaAsignaturasSelection(asignaturas: ArrayList<String>) {
         listaAsignaturas = asignaturas;
+        DialogoNotas().show(supportFragmentManager,"")
+    }
+
+    override fun onNotasSelected(nota: String) {
+        valorNotas =
     }
 }

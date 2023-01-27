@@ -15,11 +15,12 @@ class DialogoAsignatura : DialogFragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-
+        listener = context as OnAsignaturasListener
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(requireContext())
+        asignaturasSeleccionadas = ArrayList()
         listaAsig = arrayOf("PMDM","DI","AD","SGE","EIE","ING")
         builder.setTitle("Asignaturas")
         builder.setMultiChoiceItems(listaAsig,null){ _, posicion, boolean ->
@@ -32,7 +33,7 @@ class DialogoAsignatura : DialogFragment() {
         builder.setPositiveButton("Confirmar"){ _, _ -> run{
             listener.onListaAsignaturasSelection(asignaturasSeleccionadas)
         } }
-        builder.setNegativeButton("Cancelar"){ _, _ -> run{} }
+        builder.setNegativeButton("Cancelar"){ _, _ -> {} }
 
         return builder.create()
     }
