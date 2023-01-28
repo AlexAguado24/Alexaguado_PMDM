@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
     private var cantidadAsignaturas: Int = 0;
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -55,7 +54,7 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         anio = year
-        mes = month+1;
+        mes = month + 1;
         dia = dayOfMonth
         DialogoPersonalizado().show(supportFragmentManager, "")
     }
@@ -63,18 +62,26 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
     override fun onDialogoPersoSelected(nombreYApellido: String) {
         nombreApellido = nombreYApellido
         val dialogo = DialogoConfirmacion.newInstance(nombreApellido, dia, mes, hora, minutos);
-        dialogo.show(supportFragmentManager,"")
-        DialogoAsignatura().show(supportFragmentManager,"")
+        dialogo.show(supportFragmentManager, "")
+        DialogoAsignatura().show(supportFragmentManager, "")
     }
 
     override fun onListaAsignaturasSelection(asignaturas: ArrayList<String>) {
         listaAsignaturas = asignaturas;
-        DialogoNotas().show(supportFragmentManager,"")
+        DialogoNotas().show(supportFragmentManager, "")
     }
 
     override fun onNotasSelected(nota: String) {
         valorMedia = nota;
-        val dialogoFinal = DialogoFinal.newInstance(nombreApellido, dia, mes, hora, minutos,cantidadAsignaturas,valorMedia)
-        dialogoFinal.show(supportFragmentManager,"")
+        val dialogoFinal = DialogoFinal.newInstance(
+            nombreApellido,
+            dia,
+            mes,
+            hora,
+            minutos,
+            cantidadAsignaturas,
+            valorMedia
+        )
+        dialogoFinal.show(supportFragmentManager, "")
     }
 }

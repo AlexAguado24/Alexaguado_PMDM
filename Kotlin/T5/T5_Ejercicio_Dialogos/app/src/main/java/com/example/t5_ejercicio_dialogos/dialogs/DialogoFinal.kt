@@ -10,7 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.example.t5_ejercicio_dialogos.R
 
-class DialogoFinal: DialogFragment() {
+class DialogoFinal : DialogFragment() {
 
     private lateinit var vista: View;
     private lateinit var textoNombre: TextView
@@ -20,15 +20,23 @@ class DialogoFinal: DialogFragment() {
     private lateinit var textoMedia: TextView
 
     companion object {
-        fun newInstance(nombre:String,dia: Int,mes:Int,hora:Int,minutos:Int,numAsignaturas:Int, media:String): DialogoFinal{
+        fun newInstance(
+            nombre: String,
+            dia: Int,
+            mes: Int,
+            hora: Int,
+            minutos: Int,
+            numAsignaturas: Int,
+            media: String
+        ): DialogoFinal {
             val bundle = Bundle()
-            bundle.putString("nombre",nombre)
-            bundle.putInt("dia",dia)
-            bundle.putInt("mes",mes)
-            bundle.putInt("hora",hora)
-            bundle.putInt("minutos",minutos)
-            bundle.putInt("asignaturas",numAsignaturas)
-            bundle.putString("media",media)
+            bundle.putString("nombre", nombre)
+            bundle.putInt("dia", dia)
+            bundle.putInt("mes", mes)
+            bundle.putInt("hora", hora)
+            bundle.putInt("minutos", minutos)
+            bundle.putInt("asignaturas", numAsignaturas)
+            bundle.putString("media", media)
             val fragment = DialogoFinal()
             fragment.arguments = bundle
             return fragment
@@ -41,12 +49,25 @@ class DialogoFinal: DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         var builder = AlertDialog.Builder(requireContext());
-        vista = LayoutInflater.from(requireContext()).inflate(R.layout.dialogo_final,null);
+        vista = LayoutInflater.from(requireContext()).inflate(R.layout.dialogo_final, null);
         builder.setView(vista)
+        var nombreApellido = this.arguments?.get("nombre")
+        var dia = this.arguments?.get("nombre")
+        var mes = this.arguments?.get("nombre")
+        var hora = this.arguments?.get("nombre")
+        var minutos = this.arguments?.get("nombre")
+        var asignaturas = this.arguments?.get("nombre")
+        var media = this.arguments?.get("nombre")
+        builder.setMessage("Nombre : ${nombreApellido} \n" +
+                "Fecha : ${dia}/${mes} \n" +
+                "Hora : ${hora}:${minutos}\n" +
+                "Total Asignaturas : ${asignaturas}\n" +
+                "Media : ${media}")
+
         return builder.create()
     }
 
-    fun instancias(){
+    fun instancias() {
         textoNombre = vista.findViewById(R.id.nombre_apellido_final)
         textoHora = vista.findViewById(R.id.hora_final)
         textoFecha = vista.findViewById(R.id.fecha_final)
@@ -57,6 +78,7 @@ class DialogoFinal: DialogFragment() {
     override fun onStart() {
         super.onStart()
         instancias()
+        var nombreApellido = this.arguments?.get("nombre")
     }
 
     override fun onResume() {
