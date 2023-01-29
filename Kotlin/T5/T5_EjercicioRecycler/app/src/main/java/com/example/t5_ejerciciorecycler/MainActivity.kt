@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var usuario: Usuario;
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
     private fun acciones() {
         binding.botonGuardar.setOnClickListener {
             listaTrabajadores.add(usuario)
+            recyclerTrabajadores.notifyDataSetChanged()
         }
     }
 
@@ -43,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun instancias() {
         listaTrabajadores = ArrayList();
+        recyclerTrabajadores = RecyclreTrabajadores(this,listaTrabajadores);
         usuario.nombre = binding.editNombre.toString()
         usuario.apellido = binding.editApellido.toString()
         usuario.edad = binding.editEdad.toString()
@@ -56,5 +59,6 @@ class MainActivity : AppCompatActivity() {
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
         }
+
     }
 }

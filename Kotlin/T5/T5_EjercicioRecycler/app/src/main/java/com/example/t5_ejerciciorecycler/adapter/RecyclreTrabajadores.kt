@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.t5_ejerciciorecycler.R
@@ -12,9 +13,11 @@ import com.example.t5_ejerciciorecycler.model.Usuario
 class RecyclreTrabajadores(var contexto:Context, var lista: ArrayList<Usuario>): RecyclerView.Adapter<RecyclreTrabajadores.MyHolder>() {
 
     inner class MyHolder( var vista: View): RecyclerView.ViewHolder(vista){
+        var linear: LinearLayout
         var nombre: TextView
         var apellido: TextView
         init {
+            linear = vista.findViewById(R.id.linear_general)
             nombre = vista.findViewById(R.id.texto_nombre)
             apellido = vista.findViewById(R.id.texto_apellido)
         }
@@ -29,6 +32,9 @@ class RecyclreTrabajadores(var contexto:Context, var lista: ArrayList<Usuario>):
         var trabajador: Usuario = lista[position];
         holder.nombre.text = trabajador.nombre
         holder.apellido.text = trabajador.apellido
+        holder.linear.setOnClickListener {
+
+        }
     }
 
     override fun getItemCount(): Int {
