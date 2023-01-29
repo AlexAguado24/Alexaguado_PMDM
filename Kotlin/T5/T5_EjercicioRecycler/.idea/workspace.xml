@@ -9,19 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65a12de8-5024-4a7b-96ae-7c0a9f370e22" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t5_ejerciciorecycler/adapter/RecyclreTrabajadores.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t5_ejerciciorecycler/model/Usuario.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T5_Ejercicio_Dialogos/app/src/main/java/com/example/t5_ejercicio_dialogos/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../T5_Ejercicio_Dialogos/app/src/main/java/com/example/t5_ejercicio_dialogos/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T5_Ejercicio_Dialogos/app/src/main/java/com/example/t5_ejercicio_dialogos/dialogs/DialogoConfirmacion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../T5_Ejercicio_Dialogos/app/src/main/java/com/example/t5_ejercicio_dialogos/dialogs/DialogoConfirmacion.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../T5_Ejercicio_Dialogos/app/src/main/java/com/example/t5_ejercicio_dialogos/dialogs/DialogoFinal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../T5_Ejercicio_Dialogos/app/src/main/java/com/example/t5_ejercicio_dialogos/dialogs/DialogoFinal.kt" afterDir="false" />
-    </list>
+    <list default="true" id="65a12de8-5024-4a7b-96ae-7c0a9f370e22" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
