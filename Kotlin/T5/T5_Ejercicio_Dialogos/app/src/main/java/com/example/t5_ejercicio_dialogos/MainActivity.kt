@@ -63,11 +63,11 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
         nombreApellido = nombreYApellido
         val dialogo = DialogoConfirmacion.newInstance(nombreApellido, dia, mes, hora, minutos);
         dialogo.show(supportFragmentManager, "")
-        DialogoAsignatura().show(supportFragmentManager, "")
     }
 
     override fun onListaAsignaturasSelection(asignaturas: ArrayList<String>) {
         listaAsignaturas = asignaturas;
+
         DialogoNotas().show(supportFragmentManager, "")
     }
 

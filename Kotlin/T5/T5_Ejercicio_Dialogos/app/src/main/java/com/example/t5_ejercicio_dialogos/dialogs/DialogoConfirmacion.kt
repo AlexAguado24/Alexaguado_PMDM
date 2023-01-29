@@ -38,7 +38,9 @@ class DialogoConfirmacion : DialogFragment() {
         builder.setMessage(
             "Buenos dias ${nombreApellido}," +
                     " vas a registrar una respuesta el ${dia}/${mes} a las ${hora}:${minutos}. ¿Estas seguro que quieres continuar?");
-        builder.setPositiveButton("Si"){ _,_-> }
+        builder.setPositiveButton("Si"){ _,_->
+            DialogoAsignatura().show(parentFragmentManager, "")
+        }
         builder.setNegativeButton("No"){ _,_-> }
 
         return builder.create()

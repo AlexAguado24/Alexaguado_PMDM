@@ -18,6 +18,13 @@ class DialogoFinal : DialogFragment() {
     private lateinit var textoFecha: TextView
     private lateinit var textoAsignaturas: TextView
     private lateinit var textoMedia: TextView
+    var nombreApellido = this.arguments?.get("nombre")
+    var dia = this.arguments?.get("dia")
+    var mes = this.arguments?.get("mes")
+    var hora = this.arguments?.get("hora")
+    var minutos = this.arguments?.get("minutos")
+    var asignaturas = this.arguments?.get("asignaturas")
+    var media = this.arguments?.get("media")
 
     companion object {
         fun newInstance(
@@ -51,18 +58,17 @@ class DialogoFinal : DialogFragment() {
         var builder = AlertDialog.Builder(requireContext());
         vista = LayoutInflater.from(requireContext()).inflate(R.layout.dialogo_final, null);
         builder.setView(vista)
-        var nombreApellido = this.arguments?.get("nombre")
-        var dia = this.arguments?.get("nombre")
-        var mes = this.arguments?.get("nombre")
-        var hora = this.arguments?.get("nombre")
-        var minutos = this.arguments?.get("nombre")
-        var asignaturas = this.arguments?.get("nombre")
-        var media = this.arguments?.get("nombre")
-        builder.setMessage("Nombre : ${nombreApellido} \n" +
+        /*builder.setMessage("Nombre : ${nombreApellido} \n" +
                 "Fecha : ${dia}/${mes} \n" +
                 "Hora : ${hora}:${minutos}\n" +
                 "Total Asignaturas : ${asignaturas}\n" +
-                "Media : ${media}")
+                "Media : ${media}")*/
+
+        builder.setPositiveButton("ok"){_,_->{
+
+        }
+
+        }
 
         return builder.create()
     }
@@ -73,6 +79,11 @@ class DialogoFinal : DialogFragment() {
         textoFecha = vista.findViewById(R.id.fecha_final)
         textoAsignaturas = vista.findViewById(R.id.num_asignaturas_final)
         textoMedia = vista.findViewById(R.id.media_final)
+        textoNombre.text = nombreApellido.toString()
+        textoHora.text = hora.toString()+ minutos.toString()
+        textoFecha.text = dia.toString()+ mes.toString()
+        textoAsignaturas.text = asignaturas.toString()
+        textoMedia.text = media.toString()
     }
 
     override fun onStart() {

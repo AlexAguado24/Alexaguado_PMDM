@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">T5_EjercicioRecycler</string>
+    <string-array name="spinner_trabajos">
+        <item>Administrativo</item>
+        <item>Comercial</item>
+        <item>Soporte</item>
+        <item>Informatica</item>
+    </string-array>
+</resources>
