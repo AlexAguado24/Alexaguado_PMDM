@@ -34,7 +34,8 @@ class MainActivity : AppCompatActivity() {
     private fun acciones() {
         binding.botonGuardar.setOnClickListener {
             listaTrabajadores.add(usuario)
-            recyclerTrabajadores.notifyDataSetChanged()
+            //recyclerTrabajadores.notifyDataSetChanged()
+            recyclerTrabajadores.notifyItemInserted(listaTrabajadores.size)
         }
     }
 
