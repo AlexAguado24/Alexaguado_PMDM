@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var listaTrabajadores: ArrayList<Usuario>
     private lateinit var recyclerTrabajadores: RecyclreTrabajadores
     private lateinit var usuario: Usuario;
+    private lateinit var puesto:String
 
 
 
@@ -33,7 +34,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun acciones() {
         binding.botonGuardar.setOnClickListener {
-            listaTrabajadores.add(usuario)
+            var nombre = binding.editNombre.toString()
+            var apellido = binding.editApellido.toString()
+            var edad = binding.editEdad.toString()
+
+            listaTrabajadores.add(Usuario(nombre,apellido,edad,puesto))
             //recyclerTrabajadores.notifyDataSetChanged()
             recyclerTrabajadores.notifyItemInserted(listaTrabajadores.size)
         }
@@ -47,19 +52,15 @@ class MainActivity : AppCompatActivity() {
     private fun instancias() {
         listaTrabajadores = ArrayList();
         recyclerTrabajadores = RecyclreTrabajadores(this,listaTrabajadores);
-        usuario.nombre = binding.editNombre.toString()
-        usuario.apellido = binding.editApellido.toString()
-        usuario.edad = binding.editEdad.toString()
         var adapterSpinner = ArrayAdapter.createFromResource(this,R.array.spinner_trabajos,android.R.layout.simple_spinner_item)
         adapterSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerTrabajo.adapter = adapterSpinner
         binding.spinnerTrabajo.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                usuario.puesto = p2.toString()
+                puesto = binding.spinnerTrabajo.selectedItem.toString()
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
         }
-
     }
 }

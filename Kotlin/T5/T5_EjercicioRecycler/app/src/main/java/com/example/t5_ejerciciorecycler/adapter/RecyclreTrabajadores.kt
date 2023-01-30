@@ -32,9 +32,9 @@ class RecyclreTrabajadores(var contexto:Context, var lista: ArrayList<Usuario>):
         var trabajador: Usuario = lista[position];
         holder.nombre.text = trabajador.nombre
         holder.apellido.text = trabajador.apellido
-        holder.linear.setOnClickListener {
+        /*holder.linear.setOnClickListener {
 
-        }
+        }*/
     }
 
     override fun getItemCount(): Int {
