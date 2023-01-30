@@ -29,15 +29,12 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        acciones();
         instancias();
+        acciones();
     }
 
     private fun instancias() {
         listaAsignaturas = ArrayList();
-        listaAsignaturas.forEach {
-            cantidadAsignaturas++;
-        }
     }
 
     private fun acciones() {
@@ -67,7 +64,6 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
 
     override fun onListaAsignaturasSelection(asignaturas: ArrayList<String>) {
         listaAsignaturas = asignaturas;
-
         DialogoNotas().show(supportFragmentManager, "")
     }
 
@@ -79,7 +75,7 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener,
             mes,
             hora,
             minutos,
-            cantidadAsignaturas,
+            listaAsignaturas.count(),
             valorMedia
         )
         dialogoFinal.show(supportFragmentManager, "")

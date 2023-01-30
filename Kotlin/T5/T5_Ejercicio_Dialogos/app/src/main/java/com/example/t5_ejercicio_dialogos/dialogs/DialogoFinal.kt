@@ -18,13 +18,13 @@ class DialogoFinal : DialogFragment() {
     private lateinit var textoFecha: TextView
     private lateinit var textoAsignaturas: TextView
     private lateinit var textoMedia: TextView
-    var nombreApellido = this.arguments?.get("nombre")
-    var dia = this.arguments?.get("dia")
-    var mes = this.arguments?.get("mes")
-    var hora = this.arguments?.get("hora")
-    var minutos = this.arguments?.get("minutos")
-    var asignaturas = this.arguments?.get("asignaturas")
-    var media = this.arguments?.get("media")
+    private lateinit var nombreApellido:String
+    private var dia = 0
+    private var mes = 0
+    private var hora = 0
+    private var minutos = 0
+    private var asignaturas = 0
+    private lateinit var media: String
 
     companion object {
         fun newInstance(
@@ -52,6 +52,13 @@ class DialogoFinal : DialogFragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        nombreApellido = this.arguments?.get("nombre").toString()
+        dia = this.arguments?.get("dia").toString().toInt()
+        mes = this.arguments?.get("mes").toString().toInt()
+        hora = this.arguments?.get("hora").toString().toInt()
+        minutos = this.arguments?.get("minutos").toString().toInt()
+        asignaturas = this.arguments?.get("asignaturas").toString().toInt()
+        media = this.arguments?.get("media").toString()
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -80,8 +87,8 @@ class DialogoFinal : DialogFragment() {
         textoAsignaturas = vista.findViewById(R.id.num_asignaturas_final)
         textoMedia = vista.findViewById(R.id.media_final)
         textoNombre.text = nombreApellido.toString()
-        textoHora.text = hora.toString()+ minutos.toString()
-        textoFecha.text = dia.toString()+ mes.toString()
+        textoHora.text = "${hora}: ${minutos}"
+        textoFecha.text = "${dia}: ${mes}"
         textoAsignaturas.text = asignaturas.toString()
         textoMedia.text = media.toString()
     }
