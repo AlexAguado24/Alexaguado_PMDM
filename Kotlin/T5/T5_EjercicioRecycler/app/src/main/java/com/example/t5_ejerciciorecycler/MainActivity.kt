@@ -11,9 +11,10 @@ import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.t5_ejerciciorecycler.adapter.RecyclreTrabajadores
 import com.example.t5_ejerciciorecycler.databinding.ActivityMainBinding
+import com.example.t5_ejerciciorecycler.dialogs.DialogoUsuario
 import com.example.t5_ejerciciorecycler.model.Usuario
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), RecyclreTrabajadores.OnUsuarioRecyclerSelected {
 
     private lateinit var binding: ActivityMainBinding;
     private lateinit var listaTrabajadores: ArrayList<Usuario>
@@ -34,9 +35,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun acciones() {
         binding.botonGuardar.setOnClickListener {
-            var nombre = binding.editNombre.toString()
-            var apellido = binding.editApellido.toString()
-            var edad = binding.editEdad.toString()
+            var nombre = binding.editNombre.text.toString()
+            var apellido = binding.editApellido.text.toString()
+            var edad = binding.editEdad.text.toString()
 
             listaTrabajadores.add(Usuario(nombre,apellido,edad,puesto))
             //recyclerTrabajadores.notifyDataSetChanged()
@@ -62,5 +63,11 @@ class MainActivity : AppCompatActivity() {
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
         }
+    }
+
+    override fun onUsuarioClickListener(usuario: Usuario) {
+        var usuario = usuario
+        val dialogoUsuario = DialogoUsuario.
+        DialogoUsuario().show(supportFragmentManager,"")
     }
 }

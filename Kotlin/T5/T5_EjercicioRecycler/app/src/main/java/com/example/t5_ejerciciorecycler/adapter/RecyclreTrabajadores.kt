@@ -12,6 +12,8 @@ import com.example.t5_ejerciciorecycler.model.Usuario
 
 class RecyclreTrabajadores(var contexto:Context, var lista: ArrayList<Usuario>): RecyclerView.Adapter<RecyclreTrabajadores.MyHolder>() {
 
+    private lateinit var listener: OnUsuarioRecyclerSelected
+
     inner class MyHolder( var vista: View): RecyclerView.ViewHolder(vista){
         var linear: LinearLayout
         var nombre: TextView
@@ -30,14 +32,18 @@ class RecyclreTrabajadores(var contexto:Context, var lista: ArrayList<Usuario>):
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         var trabajador: Usuario = lista[position];
-        holder.nombre.text = trabajador.nombre
-        holder.apellido.text = trabajador.apellido
-        /*holder.linear.setOnClickListener {
-
-        }*/
+        holder.nombre.setText(trabajador.nombre)
+        holder.apellido.setText(trabajador.apellido)
+        holder.linear.setOnClickListener {
+            listener.onUsuarioClickListener(trabajador)
+        }
     }
 
     override fun getItemCount(): Int {
         return lista.size
+    }
+
+    interface OnUsuarioRecyclerSelected{
+        fun onUsuarioClickListener(usuario: Usuario);
     }
 }
