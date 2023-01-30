@@ -13,11 +13,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a12de8-5024-4a7b-96ae-7c0a9f370e22" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t5_ejerciciorecycler/dialogs/DialogoUsuario.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialogo_item.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/t5_ejerciciorecycler/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t5_ejerciciorecycler/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/t5_ejerciciorecycler/adapter/RecyclreTrabajadores.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t5_ejerciciorecycler/adapter/RecyclreTrabajadores.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/t5_ejerciciorecycler/dialogs/DialogoUsuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t5_ejerciciorecycler/dialogs/DialogoUsuario.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T5_Ejercicio_Dialogos/app/src/main/java/com/example/t5_ejercicio_dialogos/dialogs/DialogoFinal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../T5_Ejercicio_Dialogos/app/src/main/java/com/example/t5_ejercicio_dialogos/dialogs/DialogoFinal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../T6/T6_PracticaAsignaturas/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../T6/T6_PracticaAsignaturas/.idea/gradle.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +58,7 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../T5_Ejercicio_Dialogos" />
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">

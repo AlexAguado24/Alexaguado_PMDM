@@ -86,21 +86,15 @@ class DialogoFinal : DialogFragment() {
         textoFecha = vista.findViewById(R.id.fecha_final)
         textoAsignaturas = vista.findViewById(R.id.num_asignaturas_final)
         textoMedia = vista.findViewById(R.id.media_final)
-        textoNombre.text = nombreApellido.toString()
+        textoNombre.text = nombreApellido
         textoHora.text = "${hora}: ${minutos}"
         textoFecha.text = "${dia}: ${mes}"
         textoAsignaturas.text = asignaturas.toString()
-        textoMedia.text = media.toString()
+        textoMedia.text = media
     }
 
     override fun onStart() {
         super.onStart()
         instancias()
-        var nombreApellido = this.arguments?.get("nombre")
     }
-
-    override fun onResume() {
-        super.onResume()
-    }
-
 }

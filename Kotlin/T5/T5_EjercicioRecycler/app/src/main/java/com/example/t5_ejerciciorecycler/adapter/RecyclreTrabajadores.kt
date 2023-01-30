@@ -22,6 +22,7 @@ class RecyclreTrabajadores(var contexto:Context, var lista: ArrayList<Usuario>):
             linear = vista.findViewById(R.id.linear_general)
             nombre = vista.findViewById(R.id.texto_nombre)
             apellido = vista.findViewById(R.id.texto_apellido)
+            listener = contexto as OnUsuarioRecyclerSelected
         }
     }
 

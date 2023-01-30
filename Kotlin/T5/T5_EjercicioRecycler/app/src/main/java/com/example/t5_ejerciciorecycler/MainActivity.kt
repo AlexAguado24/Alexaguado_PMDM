@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity(), RecyclreTrabajadores.OnUsuarioRecycler
     private lateinit var binding: ActivityMainBinding;
     private lateinit var listaTrabajadores: ArrayList<Usuario>
     private lateinit var recyclerTrabajadores: RecyclreTrabajadores
-    private lateinit var usuario: Usuario;
+    private lateinit var trabajador: Usuario;
     private lateinit var puesto:String
 
 
@@ -38,10 +38,12 @@ class MainActivity : AppCompatActivity(), RecyclreTrabajadores.OnUsuarioRecycler
             var nombre = binding.editNombre.text.toString()
             var apellido = binding.editApellido.text.toString()
             var edad = binding.editEdad.text.toString()
-
             listaTrabajadores.add(Usuario(nombre,apellido,edad,puesto))
             //recyclerTrabajadores.notifyDataSetChanged()
             recyclerTrabajadores.notifyItemInserted(listaTrabajadores.size)
+            binding.editNombre.setText("")
+            binding.editApellido.setText("")
+            binding.editEdad.setText("")
         }
     }
 
@@ -66,8 +68,8 @@ class MainActivity : AppCompatActivity(), RecyclreTrabajadores.OnUsuarioRecycler
     }
 
     override fun onUsuarioClickListener(usuario: Usuario) {
-        var usuario = usuario
-        val dialogoUsuario = DialogoUsuario.
-        DialogoUsuario().show(supportFragmentManager,"")
+        trabajador = usuario
+        val dialogo = DialogoUsuario.newInstance(trabajador)
+        dialogo.show(supportFragmentManager,"")
     }
 }
