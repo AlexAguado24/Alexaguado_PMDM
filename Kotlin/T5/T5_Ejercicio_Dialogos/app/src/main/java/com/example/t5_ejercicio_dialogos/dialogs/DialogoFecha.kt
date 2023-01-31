@@ -13,7 +13,7 @@ class DialogoFecha: DialogFragment() {
         val calendario = Calendar.getInstance()
         val anio = calendario.get(Calendar.YEAR)
         val mes = calendario.get(Calendar.MONTH)
-        println(mes)
+        //println(mes)
         val dia = calendario.get(Calendar.DAY_OF_MONTH)
         val dialogo = DatePickerDialog(requireContext(), requireContext() as OnDateSetListener, anio,mes,dia)
         return dialogo
