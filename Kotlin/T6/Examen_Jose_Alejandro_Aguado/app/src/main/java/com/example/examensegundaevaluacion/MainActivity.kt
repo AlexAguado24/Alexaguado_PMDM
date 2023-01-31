@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity(), OnDateSetListener, OnTimeSetListener{
                 DialogoInfo().show(supportFragmentManager,"")
             }
             R.id.menu_cerrar->{
-
+                MainActivity().finishActivity(1)
             }
         }
         return true
