@@ -33,6 +33,8 @@ class AdaptadorVuelo(var contexto: Context, var listaVuelos: ArrayList<Vuelo>): 
         return MyHolder(vista)
     }
 
+
+
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         var vuelo = listaVuelos[position] as Vuelo
         holder.textoRecycler.setText("${vuelo.nombre}-${vuelo.nombre}")
