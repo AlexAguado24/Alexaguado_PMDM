@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1095458544200",
+    "firebase_url": "https://fir-ces-jaam-default-rtdb.firebaseio.com",
+    "project_id": "fir-ces-jaam",
+    "storage_bucket": "fir-ces-jaam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095458544200:android:7987d367cbceba942d567d",
+        "android_client_info": {
+          "package_name": "com.example.t8_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095458544200-0er4fsoda56sa0528qfj9b8p3mrttled.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0ppoDttBVIlO5mkyLHa7MNSaPSf6IqgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095458544200-0er4fsoda56sa0528qfj9b8p3mrttled.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
