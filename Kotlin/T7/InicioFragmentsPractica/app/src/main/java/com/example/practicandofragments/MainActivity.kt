@@ -7,8 +7,9 @@ import android.view.View.OnClickListener
 import com.example.practicandofragments.databinding.ActivityMainBinding
 import com.example.practicandofragments.fragments.FragmentDos
 import com.example.practicandofragments.fragments.FragmentUno
+import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : AppCompatActivity(), OnClickListener {
+class MainActivity : AppCompatActivity(), OnClickListener, FragmentUno.OnNombreFragmentListener {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -35,5 +36,9 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                 ft.commit();
             }
         }
+    }
+
+    override fun onNombreSelected(nombre: String) {
+        FragmentDos.newInstance(nombre)
     }
 }
