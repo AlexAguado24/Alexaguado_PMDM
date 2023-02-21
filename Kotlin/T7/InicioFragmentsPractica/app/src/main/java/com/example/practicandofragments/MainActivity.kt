@@ -40,5 +40,9 @@ class MainActivity : AppCompatActivity(), OnClickListener, FragmentUno.OnNombreF
 
     override fun onNombreSelected(nombre: String) {
         FragmentDos.newInstance(nombre)
+        val fm = supportFragmentManager;
+        val ft = fm.beginTransaction();
+        ft.replace(binding.sitioFragments.id, FragmentDos.newInstance(nombre))
+        ft.commit();
     }
 }

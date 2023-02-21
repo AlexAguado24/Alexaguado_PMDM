@@ -1,5 +1,6 @@
 package com.example.practicandofragments.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +24,11 @@ class FragmentDos: Fragment() {
         }
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        nombreF1 = this.arguments?.getString("nombre") ?: "Defecto"
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,7 +40,6 @@ class FragmentDos: Fragment() {
 
     override fun onStart() {
         super.onStart()
-        nombreF1 = arguments?.getString("nombre").toString()
         binding.textNombreF2.text = nombreF1
     }
 }
