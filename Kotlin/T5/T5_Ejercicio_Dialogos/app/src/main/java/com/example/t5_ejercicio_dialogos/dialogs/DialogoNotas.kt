@@ -45,6 +45,7 @@ class DialogoNotas: DialogFragment() {
     fun acciones(){
         botonNotas.setOnClickListener {
             listener.onNotasSelected(editNotas.text.toString())
+            dismiss()
         }
     }
 
