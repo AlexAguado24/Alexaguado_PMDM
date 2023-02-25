@@ -10,9 +10,8 @@
         android:name="com.example.proyectologin.LoginFragment"
         android:label="Login App"
         tools:layout="@layout/fragment_login">
-
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            android:id="@+id/action_LoginFragment_to_RegisterFragment"
             app:destination="@id/RegisterFragment" />
     </fragment>
     <fragment
@@ -20,9 +19,8 @@
         android:name="com.example.proyectologin.RegisterFragment"
         android:label="Register"
         tools:layout="@layout/fragment_register">
-
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_RegisterFragment_to_LoginFragment"
             app:destination="@id/LoginFragment" />
     </fragment>
 </navigation>
