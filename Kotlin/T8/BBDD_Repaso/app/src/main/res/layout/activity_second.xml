@@ -7,6 +7,11 @@
     tools:context=".SecondActivity"
     android:orientation="vertical">
 
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/boton_guardar"
+        android:text="Guardar"
+        android:layout_margin="20dp"/>
 
 </LinearLayout>
