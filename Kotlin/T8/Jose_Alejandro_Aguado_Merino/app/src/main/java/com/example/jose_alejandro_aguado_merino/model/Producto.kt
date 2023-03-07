@@ -1,4 +1,9 @@
 package com.example.jose_alejandro_aguado_merino.model
 
-data class Producto(var id: Int, var price: Int, var stock: Int, var imagen: String, var nombre: String) {
-}
+data class Producto(
+    var id: Int? = null,
+    var price: Int? = null,
+    var stock: Int? = null,
+    var imagen: String? = null,
+    var nombre: String? = null
+)

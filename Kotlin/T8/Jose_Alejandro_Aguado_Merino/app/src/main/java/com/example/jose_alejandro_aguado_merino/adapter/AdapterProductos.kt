@@ -38,10 +38,10 @@ class AdapterProductos(var listaProductos: ArrayList<Producto>): RecyclerView.Ad
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         var producto = listaProductos[position]
-        holder.imagen.setImageResource(producto.imagen.toInt())
+        holder.imagen.setImageResource(producto.imagen!!.toInt())
         holder.nombre.setText(producto.nombre)
         holder.itemRecycler.setOnClickListener {
-            Snackbar.make(holder.itemView,producto.price,Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(holder.itemView,producto.price!!,Snackbar.LENGTH_SHORT).show()
         }
     }
 

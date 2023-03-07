@@ -48,15 +48,13 @@ class SecondFragment : Fragment() {
         binding.recyclerProductos.adapter = adaptadorProducto
         binding.recyclerProductos.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL,false)
 
-        var reference = database.getReference("usuarios")
-            .child("productos")
+        var reference = database.getReference("productos")
 
         reference.addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){
                     for (i in snapshot.children) {
                         var producto = i.getValue(Producto::class.java)
-                        Log.v("producto", i.value.toString())
                         adaptadorProducto.addProducto(producto!!)
                     }
                 }
