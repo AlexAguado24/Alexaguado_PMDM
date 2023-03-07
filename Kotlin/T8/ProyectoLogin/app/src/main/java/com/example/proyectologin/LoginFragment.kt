@@ -51,8 +51,6 @@ class LoginFragment : Fragment() {
                             val bundle = Bundle()
                             bundle.putString("nombre",binding.editNombre.text.toString())
                             bundle.putString("nombre",binding.editPassword.text.toString())
-
-
                         } else {
 
                         }
