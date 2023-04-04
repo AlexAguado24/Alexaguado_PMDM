@@ -46,24 +46,31 @@ class LoginFragment : Fragment() {
         binding.editUsuario.setText(arguments?.getString("correo"))
         binding.editContrasenia.setText(arguments?.getString("password"))
         binding.buttonLogin.setOnClickListener {
-            auth.signInWithEmailAndPassword(
-                binding.editUsuario.text.toString(),
-                binding.editContrasenia.text.toString()
-            )
-                .addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        var bundle = Bundle()
-                        bundle.getString("correo", binding.editUsuario.text.toString())
-                        bundle.getString("uid", auth.currentUser!!.uid)
-                        findNavController().navigate(
-                            R.id.action_FirstFragment_to_secondActivity,
-                            bundle
-                        )
-                    } else {
-                        Snackbar.make(binding.root, "Error en el login", Snackbar.LENGTH_SHORT)
-                            .show()
+            /*Snackbar.make(binding.root, auth.currentUser!!.uid, Snackbar.LENGTH_SHORT)
+                .show()*/
+            if (binding.editUsuario.text.isNotEmpty() && binding.editContrasenia.text.isNotEmpty()) {
+                auth.signInWithEmailAndPassword(
+                    binding.editUsuario.text.toString(),
+                    binding.editContrasenia.text.toString()
+                )
+                    .addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            var bundle = Bundle()
+                            bundle.putString("usuario", binding.editUsuario.text.toString())
+                            bundle.putString("uid", auth.currentUser!!.uid)
+                            findNavController().navigate(
+                                R.id.action_FirstFragment_to_secondActivity,
+                                bundle
+                            )
+                        } else {
+                            Snackbar.make(binding.root, "Error en el login", Snackbar.LENGTH_SHORT)
+                                .show()
+                        }
                     }
-                }
+            } else {
+                Snackbar.make(binding.root, "Faltan datos", Snackbar.LENGTH_SHORT)
+                    .show()
+            }
         }
 
         binding.buttonRegister.setOnClickListener {

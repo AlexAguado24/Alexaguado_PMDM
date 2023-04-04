@@ -13,14 +13,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a12de8-5024-4a7b-96ae-7c0a9f370e22" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../T8/BBDD_Repaso/app/src/main/java/com/example/repaso_bbdd/adapter/AdapterProducto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../T8/BBDD_Repaso/app/src/main/java/com/example/repaso_bbdd/model/Producto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../T8/BBDD_Repaso/app/src/main/res/layout/recycler_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Te_Rents/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Te_Rents/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Te_Rents/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Te_Rents/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Te_Rents/app/src/main/java/com/example/terents/NoTeRentsFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Te_Rents/app/src/main/res/layout/no_te_rents_fragment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../T8/BBDD_Repaso/app/src/main/java/com/example/repaso_bbdd/LoginFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../T8/BBDD_Repaso/app/src/main/java/com/example/repaso_bbdd/LoginFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../T8/BBDD_Repaso/app/src/main/java/com/example/repaso_bbdd/SecondActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../T8/BBDD_Repaso/app/src/main/java/com/example/repaso_bbdd/SecondActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../T8/BBDD_Repaso/app/src/main/res/layout/activity_second.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../T8/BBDD_Repaso/app/src/main/res/layout/activity_second.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../T8/BBDD_Repaso/app/src/main/res/layout/fragment_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../T8/BBDD_Repaso/app/src/main/res/layout/fragment_login.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[1a98d124]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Usuario\.android\avd\Pixel_2_API_30_Codigos2223.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -53,7 +66,7 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Alexaguado_PSP/UltimoTrabajo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
